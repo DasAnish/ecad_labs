@@ -1,0 +1,40 @@
+	component rotary_hex is
+		port (
+<<<<<<< HEAD
+			buttons_export                : out std_logic_vector(15 downto 0);                    -- export
+			clk_clk                       : in  std_logic                     := 'X';             -- clk
+			led_pins_01_led0              : out std_logic_vector(6 downto 0);                     -- led0
+			led_pins_01_led1              : out std_logic_vector(6 downto 0);                     -- led1
+			led_pins_23_led0              : out std_logic_vector(6 downto 0);                     -- led0
+			led_pins_23_led1              : out std_logic_vector(6 downto 0);                     -- led1
+			reset_reset_n                 : in  std_logic                     := 'X';             -- reset_n
+			rotary_event_left_rotary_cw   : out std_logic;                                        -- rotary_cw
+			rotary_event_left_rotary_ccw  : out std_logic;                                        -- rotary_ccw
+			rotary_event_right_rotary_cw  : out std_logic;                                        -- rotary_cw
+			rotary_event_right_rotary_ccw : out std_logic;                                        -- rotary_ccw
+			rotary_in_left_rotary_in      : in  std_logic_vector(1 downto 0)  := (others => 'X'); -- rotary_in
+			rotary_in_right_rotary_in     : in  std_logic_vector(1 downto 0)  := (others => 'X'); -- rotary_in
+			shiftregctl_shiftreg_clk      : out std_logic;                                        -- shiftreg_clk
+			shiftregctl_shiftreg_loadn    : out std_logic;                                        -- shiftreg_loadn
+			shiftregctl_shiftreg_out      : in  std_logic                     := 'X'              -- shiftreg_out
+=======
+			clk_clk                                   : in  std_logic                     := 'X';             -- clk
+			eightbitstosevenseg_0_led_pins_led0       : out std_logic_vector(6 downto 0);                     -- led0
+			eightbitstosevenseg_0_led_pins_led1       : out std_logic_vector(6 downto 0);                     -- led1
+			eightbitstosevenseg_1_led_pins_led0       : out std_logic_vector(6 downto 0);                     -- led0
+			eightbitstosevenseg_1_led_pins_led1       : out std_logic_vector(6 downto 0);                     -- led1
+			reset_reset_n                             : in  std_logic                     := 'X';             -- reset_n
+			rotaryctl_0_rotary_event_rotary_cw        : out std_logic;                                        -- rotary_cw
+			rotaryctl_0_rotary_event_rotary_ccw       : out std_logic;                                        -- rotary_ccw
+			rotaryctl_0_rotary_in_rotary_in           : in  std_logic_vector(1 downto 0)  := (others => 'X'); -- rotary_in
+			rotaryctl_1_rotary_event_rotary_cw        : out std_logic;                                        -- rotary_cw
+			rotaryctl_1_rotary_event_rotary_ccw       : out std_logic;                                        -- rotary_ccw
+			rotaryctl_1_rotary_in_rotary_in           : in  std_logic_vector(1 downto 0)  := (others => 'X'); -- rotary_in
+			shiftregctl_0_buttons_export              : out std_logic_vector(15 downto 0);                    -- export
+			shiftregctl_0_shiftreg_ext_shiftreg_clk   : out std_logic;                                        -- shiftreg_clk
+			shiftregctl_0_shiftreg_ext_shiftreg_loadn : out std_logic;                                        -- shiftreg_loadn
+			shiftregctl_0_shiftreg_ext_shiftreg_out   : in  std_logic                     := 'X'              -- shiftreg_out
+>>>>>>> 5b25eb9d82842b08af39b30ab2671937ae786069
+		);
+	end component rotary_hex;
+

@@ -217,14 +217,62 @@ module toplevel(
 );
 
 // your code goes here
-	logic [27:0] count;
+	logic [24:0] count;
+	logic [15:0] buttons;
+	
+	logic rst;
+	
+	logic [7:0] left_rotary_pos;
+	logic left_rot_cw, left_rot_ccw, right_rot_cw, right_rot_ccw;
+	logic [7:0] right_rotary_pos;
+	rotary dosync(.clk(CLOCK_50), .rst(rst), .rotary_in(DIALL),
+		.rotary_pos(left_rotary_pos), .rot_cw(left_rot_cw), .rot_ccw(left_rot_ccw));
+	rotary (.clk(CLOCK_50), .rst(rst), .rotary_in(DIALR), .rotary_pos(right_rotary_pos), .rot_cw(right_rot_cw), .rot_ccw(right_rot_ccw));
+	
+	hex_to_7seg(.hexval(left_rotary_pos[3:0]), .ledcode(HEX4));
+	hex_to_7seg(.hexval(left_rotary_pos[7:4]), .ledcode(HEX5));
+	hex_to_7seg(.hexval(right_rotary_pos[3:0]), .ledcode(HEX2));
+	hex_to_7seg(.hexval(right_rotary_pos[7:4]), .ledcode(HEX3));
+	
+	shiftregctl(.clock_50m(CLOCK_50), .reset(!KEY[0]), .shiftreg_clk(SHIFT_CLKIN), .shiftreg_loadn(SHIFT_LOAD),
+		.shiftreg_out(SHIFT_OUT), .buttons(buttons));
+		
+	typedef struct packed {
+		logic button_b;
+		logic button_a;
+		logic button_y;
+		logic button_x;
+		logic spare0;
+		logic touch_irq;
+		logic spare1;
+		logic spare2;
+		logic nav_u;
+		logic nav_l;
+		logic nav_r;
+		logic nav_d;
+		logic nav_click;
+		logic dialr_click;
+		logic diall_click;
+		logic temperature_alarm;
+	} buttonsT;
 
+	buttonsT buttons_decoded;
+
+	always_comb begin
+		buttons_decoded = buttons;
+		// access fields as eg buttons_decoded.dialr_click
+	end
+	
+	
     always_ff @(posedge CLOCK_50) begin
         count <= count + 1;
-    end
-
-    always_comb begin
-        LEDR <= count[27:18];
+		  rst <= !KEY[0];
+		  if (!buttons_decoded.dialr_click) HEX0 <= HEX2 + HEX4;
+		  if (!buttons_decoded.diall_click) HEX1 <= HEX3 + HEX5;
+		  
+		  if (buttons_decoded.dialr_click && count==0) HEX0 <= HEX0+1;
+		  if (buttons_decoded.diall_click && count==0) HEX1 <= HEX1+1;
+		  
     end
 
 endmodule

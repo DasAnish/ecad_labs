@@ -1,0 +1,24 @@
+<sld_project_info>
+  <project>
+<<<<<<< HEAD
+    <hash md5_digest_80b="2be7d2357a4d87c0c513"/>
+=======
+    <hash md5_digest_80b="81ff580f7903cca05733"/>
+>>>>>>> 5b25eb9d82842b08af39b30ab2671937ae786069
+  </project>
+  <file_info>
+    <file device="5CSEMA5F31C6" path="toplevel.sof" usercode="0xFFFFFFFF"/>
+  </file_info>
+  <sld_infos>
+    <sld_info hpath="rotary_hex:u0" name="u0">
+      <assignment_values>
+<<<<<<< HEAD
+        <assignment_value text="QSYS_NAME rotary_hex HAS_SOPCINFO 1 GENERATION_ID 1572361605"/>
+=======
+        <assignment_value text="QSYS_NAME rotary_hex HAS_SOPCINFO 1 GENERATION_ID 1572308764"/>
+>>>>>>> 5b25eb9d82842b08af39b30ab2671937ae786069
+      </assignment_values>
+      <parameters/>
+    </sld_info>
+  </sld_infos>
+</sld_project_info>
