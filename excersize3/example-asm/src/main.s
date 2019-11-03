@@ -23,7 +23,7 @@ div:
 	
 	#Q=s1; R=s2; i=s3; N=a0; D=a1;
 	
-	.CONDsim:/clarvi_sim/clarvi/clarvi/#ALWAYS#27
+	#.COND
 	
 	
 	
