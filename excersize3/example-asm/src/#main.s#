@@ -72,15 +72,12 @@ main:
 	sw ra, 0(sp)
 	lw a0, 4(sp)
 	lw a1, 8(sp)
-	#addi a0, zero, 12
 	
-	
-	#addi a1, zero, 4
-	#or a1, a1, 1
-	
-	#call div # and jump to a function
-	#DP a1
-	#DP a0
+	addi a0, zero, 12
+	addi a1, zero, 4
+	call div # and jump to a function
+	DP a1
+	DP a0
 
 	addi a0, zero, 93
 	addi a1, zero, 7
@@ -88,10 +85,12 @@ main:
 	DP a1
 	DP a0
 
-	#lui a0, (0x12345000>>12)
-	#ori a0, a0, 0x678
-	#addi a1, zero, 255
-	
+	lui a0, (0x12345000>>12)
+	ori a0, a0, 0x678
+	addi a1, zero, 255
+	call div # and jump to a function
+	DP a1
+	DP a0
 	
 	lw ra, 0(sp)
 	
