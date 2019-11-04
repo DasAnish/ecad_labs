@@ -9,10 +9,9 @@ div:
 	
 	# store any callee-saved register you might overwrite
 	sw ra, 28(sp)
-	#sw s0, 24(sp)
-	#sw fp, 24(sp)
-	#sw a0, 4(sp)
-	#sw a1, 8(sp)
+	beq a1, zero, exit
+
+	#dp a0
 	
 	lw s1, 12(sp)
 	mv s1, zero
@@ -20,17 +19,10 @@ div:
 	mv s2, zero
 	lw s3, 20(sp)
 	mv s3, zero
-	addi s3, s3, 8
+	addi s3, s3, 32
 	lw s4, 24(sp)
 	mv s4, zero
-	
-	#sw s1, 12(sp)
-	#sw s2, 16(sp)
-	#sw s3, 20(sp)
-	#sw s4, 24(sp)
-
-	#lw s3, 20(sp)
-	#lw s1, 12(sp)
+	jal loop
 loop:
 	addi s3, s3, -1
 	blt s3, zero, end
@@ -55,13 +47,8 @@ end:
 	#DP s1
 	mv a0, s1
 	mv a1, s2
-	
-	
-	
-	#Q=s1; R=s2; i=s3; N=a0; D=a1;
-		
-	
-	# load every register you stored above
+	jal exit
+exit:	
 	lw ra, 28(sp)
 	addi sp,sp,32 	# Free up stack space
 	ret
@@ -80,35 +67,4 @@ rem:
 
 	
 
-	
-.global main		# Export the symbol 'main' so we can call it from other files
-.type main, @function
-main:
-	addi sp,sp,-32 	# Allocate stack space
-	sw ra, 0(sp)
-	lw a0, 4(sp)
-	lw a1, 8(sp)
-	addi a0, zero, 12
-	addi a1, zero, 4
-	#or a1, a1, 1
-	
-	call rem # and jump to a function
-	DP a1
-	DP a0
 
-	addi a0, zero, 93
-	addi a1, zero, 7
-	call rem # and jump to a function
-	DP a1
-	DP a0
-
-	#lui a0, (0x12345000>>12)
-	#ori a0, a0, 0x678
-	#addi a1, zero, 255
-	
-	
-	lw ra, 0(sp)
-	
-	addi sp,sp,32 	# Free up stack space
-	ECALL
-	ret
