@@ -20,7 +20,7 @@ module rotary
 	debounce dosyn(.clk(clk), .rst(rst), .bouncy_in(rotary_in[0]), .clean_out(rotary_out[0]));
 	
 	//Synchronous output value manipulation logic
-	always_ff @(posedge clk) 
+	always_ff @(posedge clk or posedge rst) 
 	begin
 		
 		prev_values <= rotary_out;
