@@ -1,0 +1,21 @@
+	component ex2b is
+		port (
+			buttons_export            : out std_logic_vector(15 downto 0);                    -- export
+			clk_clk                   : in  std_logic                     := 'X';             -- clk
+			led_pins_1_led0           : out std_logic_vector(6 downto 0);                     -- led0
+			led_pins_1_led1           : out std_logic_vector(6 downto 0);                     -- led1
+			led_pins_2_led0           : out std_logic_vector(6 downto 0);                     -- led0
+			led_pins_2_led1           : out std_logic_vector(6 downto 0);                     -- led1
+			reset_reset_n             : in  std_logic                     := 'X';             -- reset_n
+			rotary_event_1_rotary_cw  : out std_logic;                                        -- rotary_cw
+			rotary_event_1_rotary_ccw : out std_logic;                                        -- rotary_ccw
+			rotary_event_2_rotary_cw  : out std_logic;                                        -- rotary_cw
+			rotary_event_2_rotary_ccw : out std_logic;                                        -- rotary_ccw
+			rotary_in_1_rotary_in     : in  std_logic_vector(1 downto 0)  := (others => 'X'); -- rotary_in
+			rotary_in_2_rotary_in     : in  std_logic_vector(1 downto 0)  := (others => 'X'); -- rotary_in
+			shift_shiftreg_clk        : out std_logic;                                        -- shiftreg_clk
+			shift_shiftreg_loadn      : out std_logic;                                        -- shiftreg_loadn
+			shift_shiftreg_out        : in  std_logic                     := 'X'              -- shiftreg_out
+		);
+	end component ex2b;
+

@@ -1,0 +1,16 @@
+<sld_project_info>
+  <project>
+    <hash md5_digest_80b="f6bd8dfc0d58458811b8"/>
+  </project>
+  <file_info>
+    <file device="5CSEMA5F31C6" path="toplevel.sof" usercode="0xFFFFFFFF"/>
+  </file_info>
+  <sld_infos>
+    <sld_info hpath="ex2b:u0" name="u0">
+      <assignment_values>
+        <assignment_value text="QSYS_NAME ex2b HAS_SOPCINFO 1 GENERATION_ID 1572984498"/>
+      </assignment_values>
+      <parameters/>
+    </sld_info>
+  </sld_infos>
+</sld_project_info>

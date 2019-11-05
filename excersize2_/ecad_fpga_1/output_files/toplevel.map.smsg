@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at toplevel.sv(274): always construct contains both blocking and non-blocking assignments File: /home/ecad/Desktop/excersize2_/ecad_fpga_1/toplevel.sv Line: 274

@@ -1,0 +1,196 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2016  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 0 0 400 560)
+	(text "ex2b" (rect 187 -1 205 11)(font "Arial" (font_size 10)))
+	(text "inst" (rect 8 544 20 556)(font "Arial" ))
+	(port
+		(pt 0 112)
+		(input)
+		(text "clk_clk" (rect 0 0 27 12)(font "Arial" (font_size 8)))
+		(text "clk_clk" (rect 4 101 46 112)(font "Arial" (font_size 8)))
+		(line (pt 0 112)(pt 160 112)(line_width 1))
+	)
+	(port
+		(pt 0 264)
+		(input)
+		(text "reset_reset_n" (rect 0 0 56 12)(font "Arial" (font_size 8)))
+		(text "reset_reset_n" (rect 4 253 82 264)(font "Arial" (font_size 8)))
+		(line (pt 0 264)(pt 160 264)(line_width 1))
+	)
+	(port
+		(pt 0 416)
+		(input)
+		(text "rotary_in_1_rotary_in[1..0]" (rect 0 0 107 12)(font "Arial" (font_size 8)))
+		(text "rotary_in_1_rotary_in[1..0]" (rect 4 405 166 416)(font "Arial" (font_size 8)))
+		(line (pt 0 416)(pt 160 416)(line_width 3))
+	)
+	(port
+		(pt 0 456)
+		(input)
+		(text "rotary_in_2_rotary_in[1..0]" (rect 0 0 108 12)(font "Arial" (font_size 8)))
+		(text "rotary_in_2_rotary_in[1..0]" (rect 4 445 166 456)(font "Arial" (font_size 8)))
+		(line (pt 0 456)(pt 160 456)(line_width 3))
+	)
+	(port
+		(pt 0 528)
+		(input)
+		(text "shift_shiftreg_out" (rect 0 0 69 12)(font "Arial" (font_size 8)))
+		(text "shift_shiftreg_out" (rect 4 517 112 528)(font "Arial" (font_size 8)))
+		(line (pt 0 528)(pt 160 528)(line_width 1))
+	)
+	(port
+		(pt 0 72)
+		(output)
+		(text "buttons_export[15..0]" (rect 0 0 82 12)(font "Arial" (font_size 8)))
+		(text "buttons_export[15..0]" (rect 4 61 130 72)(font "Arial" (font_size 8)))
+		(line (pt 0 72)(pt 160 72)(line_width 3))
+	)
+	(port
+		(pt 0 152)
+		(output)
+		(text "led_pins_1_led0[6..0]" (rect 0 0 82 12)(font "Arial" (font_size 8)))
+		(text "led_pins_1_led0[6..0]" (rect 4 141 130 152)(font "Arial" (font_size 8)))
+		(line (pt 0 152)(pt 160 152)(line_width 3))
+	)
+	(port
+		(pt 0 168)
+		(output)
+		(text "led_pins_1_led1[6..0]" (rect 0 0 81 12)(font "Arial" (font_size 8)))
+		(text "led_pins_1_led1[6..0]" (rect 4 157 130 168)(font "Arial" (font_size 8)))
+		(line (pt 0 168)(pt 160 168)(line_width 3))
+	)
+	(port
+		(pt 0 208)
+		(output)
+		(text "led_pins_2_led0[6..0]" (rect 0 0 83 12)(font "Arial" (font_size 8)))
+		(text "led_pins_2_led0[6..0]" (rect 4 197 130 208)(font "Arial" (font_size 8)))
+		(line (pt 0 208)(pt 160 208)(line_width 3))
+	)
+	(port
+		(pt 0 224)
+		(output)
+		(text "led_pins_2_led1[6..0]" (rect 0 0 82 12)(font "Arial" (font_size 8)))
+		(text "led_pins_2_led1[6..0]" (rect 4 213 130 224)(font "Arial" (font_size 8)))
+		(line (pt 0 224)(pt 160 224)(line_width 3))
+	)
+	(port
+		(pt 0 304)
+		(output)
+		(text "rotary_event_1_rotary_cw" (rect 0 0 109 12)(font "Arial" (font_size 8)))
+		(text "rotary_event_1_rotary_cw" (rect 4 293 148 304)(font "Arial" (font_size 8)))
+		(line (pt 0 304)(pt 160 304)(line_width 1))
+	)
+	(port
+		(pt 0 320)
+		(output)
+		(text "rotary_event_1_rotary_ccw" (rect 0 0 114 12)(font "Arial" (font_size 8)))
+		(text "rotary_event_1_rotary_ccw" (rect 4 309 154 320)(font "Arial" (font_size 8)))
+		(line (pt 0 320)(pt 160 320)(line_width 1))
+	)
+	(port
+		(pt 0 360)
+		(output)
+		(text "rotary_event_2_rotary_cw" (rect 0 0 110 12)(font "Arial" (font_size 8)))
+		(text "rotary_event_2_rotary_cw" (rect 4 349 148 360)(font "Arial" (font_size 8)))
+		(line (pt 0 360)(pt 160 360)(line_width 1))
+	)
+	(port
+		(pt 0 376)
+		(output)
+		(text "rotary_event_2_rotary_ccw" (rect 0 0 115 12)(font "Arial" (font_size 8)))
+		(text "rotary_event_2_rotary_ccw" (rect 4 365 154 376)(font "Arial" (font_size 8)))
+		(line (pt 0 376)(pt 160 376)(line_width 1))
+	)
+	(port
+		(pt 0 496)
+		(output)
+		(text "shift_shiftreg_clk" (rect 0 0 68 12)(font "Arial" (font_size 8)))
+		(text "shift_shiftreg_clk" (rect 4 485 112 496)(font "Arial" (font_size 8)))
+		(line (pt 0 496)(pt 160 496)(line_width 1))
+	)
+	(port
+		(pt 0 512)
+		(output)
+		(text "shift_shiftreg_loadn" (rect 0 0 77 12)(font "Arial" (font_size 8)))
+		(text "shift_shiftreg_loadn" (rect 4 501 124 512)(font "Arial" (font_size 8)))
+		(line (pt 0 512)(pt 160 512)(line_width 1))
+	)
+	(drawing
+		(text "buttons" (rect 118 43 278 99)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 165 67 366 144)(font "Arial" (color 0 0 0)))
+		(text "clk" (rect 145 83 308 179)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "clk" (rect 165 107 348 224)(font "Arial" (color 0 0 0)))
+		(text "led_pins_1" (rect 99 123 258 259)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "led0" (rect 165 147 354 304)(font "Arial" (color 0 0 0)))
+		(text "led1" (rect 165 163 354 336)(font "Arial" (color 0 0 0)))
+		(text "led_pins_2" (rect 97 179 254 371)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "led0" (rect 165 203 354 416)(font "Arial" (color 0 0 0)))
+		(text "led1" (rect 165 219 354 448)(font "Arial" (color 0 0 0)))
+		(text "reset" (rect 131 235 292 483)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "reset_n" (rect 165 259 372 528)(font "Arial" (color 0 0 0)))
+		(text "rotary_event_1" (rect 75 275 234 563)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "rotary_cw" (rect 165 299 384 608)(font "Arial" (color 0 0 0)))
+		(text "rotary_ccw" (rect 165 315 390 640)(font "Arial" (color 0 0 0)))
+		(text "rotary_event_2" (rect 73 331 230 675)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "rotary_cw" (rect 165 355 384 720)(font "Arial" (color 0 0 0)))
+		(text "rotary_ccw" (rect 165 371 390 752)(font "Arial" (color 0 0 0)))
+		(text "rotary_in_1" (rect 96 387 258 787)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "rotary_in" (rect 165 411 384 832)(font "Arial" (color 0 0 0)))
+		(text "rotary_in_2" (rect 94 427 254 867)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "rotary_in" (rect 165 451 384 912)(font "Arial" (color 0 0 0)))
+		(text "shift" (rect 135 467 300 947)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "shiftreg_clk" (rect 165 491 402 992)(font "Arial" (color 0 0 0)))
+		(text "shiftreg_loadn" (rect 165 507 414 1024)(font "Arial" (color 0 0 0)))
+		(text "shiftreg_out" (rect 165 523 402 1056)(font "Arial" (color 0 0 0)))
+		(text " ex2b " (rect 377 544 790 1098)(font "Arial" ))
+		(line (pt 160 32)(pt 240 32)(line_width 1))
+		(line (pt 240 32)(pt 240 544)(line_width 1))
+		(line (pt 160 544)(pt 240 544)(line_width 1))
+		(line (pt 160 32)(pt 160 544)(line_width 1))
+		(line (pt 161 52)(pt 161 76)(line_width 1))
+		(line (pt 162 52)(pt 162 76)(line_width 1))
+		(line (pt 161 92)(pt 161 116)(line_width 1))
+		(line (pt 162 92)(pt 162 116)(line_width 1))
+		(line (pt 161 132)(pt 161 172)(line_width 1))
+		(line (pt 162 132)(pt 162 172)(line_width 1))
+		(line (pt 161 188)(pt 161 228)(line_width 1))
+		(line (pt 162 188)(pt 162 228)(line_width 1))
+		(line (pt 161 244)(pt 161 268)(line_width 1))
+		(line (pt 162 244)(pt 162 268)(line_width 1))
+		(line (pt 161 284)(pt 161 324)(line_width 1))
+		(line (pt 162 284)(pt 162 324)(line_width 1))
+		(line (pt 161 340)(pt 161 380)(line_width 1))
+		(line (pt 162 340)(pt 162 380)(line_width 1))
+		(line (pt 161 396)(pt 161 420)(line_width 1))
+		(line (pt 162 396)(pt 162 420)(line_width 1))
+		(line (pt 161 436)(pt 161 460)(line_width 1))
+		(line (pt 162 436)(pt 162 460)(line_width 1))
+		(line (pt 161 476)(pt 161 532)(line_width 1))
+		(line (pt 162 476)(pt 162 532)(line_width 1))
+		(line (pt 0 0)(pt 400 0)(line_width 1))
+		(line (pt 400 0)(pt 400 560)(line_width 1))
+		(line (pt 0 560)(pt 400 560)(line_width 1))
+		(line (pt 0 0)(pt 0 560)(line_width 1))
+	)
+)
