@@ -45,8 +45,8 @@ loop:
 	jal loop
 ifblock:
 	sub s2, s2, a1
-	srl s4, s1, s3
-	ori s4, s4, 1
+	#srl s4, s1, s3
+	or s4, zero, 1
 	sll s4, s4, s3
 	or s1, s1, s4
 	blt s3,zero, end
