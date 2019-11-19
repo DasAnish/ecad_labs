@@ -36,10 +36,28 @@ void vid_set_pixel(int x, int y, int colour)
   framebuffer[x+y*DISPLAY_WIDTH] = colour;
 }
 
+void hex_output(int value)
+{
+  int *hex_leds = (int *) 0x04000080;  // define a pointer to the register
+  *hex_leds = value;                   // write the value to that address
+}
 
 
 
 int main(void)
 {
+  int true = 1, false = 0;
+  int buttons;
+  buttons = avolon_read(PIO_BUTTONS);
+  while(true) {
+    buttons += avolon_read(PIO_BUTTONS);
+    if ((buttons>>1) & 1) break;
+    int left;
+    left = avolon_read(PIO_ROTARY_L);
+    
+    if (buttons&1) break;
+    hex_output(left);
+     
+  }
         
 }

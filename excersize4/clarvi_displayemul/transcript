@@ -3,6 +3,7 @@ ls
 # bram.sv
 # clarvi_avalon_external.c
 # clarvi_avalon_external.h
+# clarvi_avalon_external.so
 # clarvi_avalon_external.sv
 # clarvi_avalon.sv
 # clarvi_debug.sv
@@ -13,57 +14,60 @@ ls
 # displayemul
 # displayemul.c
 # Makefile
+# modelsim.ini
 # README.md
 # riscv.svh
 # sim.sv
 # transcript
+# vsim.wlf
+# work
 do clarvi_test.do ../example-c/build/mem.txt
+# ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
 # vmap work work 
-# Copying /opt/altera_lite/16.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # /opt/altera_lite/16.1/modelsim_ase/linuxaloem
 # -1
 # -m32
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:01:49 on Nov 17,2019
+# Start time: 13:23:42 on Nov 19,2019
 # vlog -reportprogress 300 clarvi_avalon_external.sv 
 # -- Compiling module clarvi_avalon_external
 # 
 # Top level modules:
 # 	clarvi_avalon_external
-# End time: 00:01:49 on Nov 17,2019, Elapsed time: 0:00:00
+# End time: 13:23:43 on Nov 19,2019, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:01:49 on Nov 17,2019
+# Start time: 13:23:43 on Nov 19,2019
 # vlog -reportprogress 300 clarvi.sv 
 # -- Compiling package clarvi_sv_unit
 # -- Compiling module clarvi
 # 
 # Top level modules:
 # 	clarvi
-# End time: 00:01:49 on Nov 17,2019, Elapsed time: 0:00:00
+# End time: 13:23:43 on Nov 19,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:01:49 on Nov 17,2019
+# Start time: 13:23:43 on Nov 19,2019
 # vlog -reportprogress 300 bram.sv 
 # -- Compiling module dual_port_bram
 # 
 # Top level modules:
 # 	dual_port_bram
-# End time: 00:01:49 on Nov 17,2019, Elapsed time: 0:00:00
+# End time: 13:23:43 on Nov 19,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:01:49 on Nov 17,2019
+# Start time: 13:23:43 on Nov 19,2019
 # vlog -reportprogress 300 clarvi_avalon.sv 
 # -- Compiling module clarvi_avalon
 # 
 # Top level modules:
 # 	clarvi_avalon
-# End time: 00:01:49 on Nov 17,2019, Elapsed time: 0:00:00
+# End time: 13:23:43 on Nov 19,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:01:50 on Nov 17,2019
+# Start time: 13:23:43 on Nov 19,2019
 # vlog -reportprogress 300 clarvi_sim.sv 
 # -- Compiling module clarvi_sim
 # -- Compiling module mock_waitrequest
@@ -73,10 +77,10 @@ do clarvi_test.do ../example-c/build/mem.txt
 # 	clarvi_sim
 # 	mock_waitrequest
 # 	mock_interrupt
-# End time: 00:01:50 on Nov 17,2019, Elapsed time: 0:00:00
+# End time: 13:23:43 on Nov 19,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vsim -novopt -sv_lib clarvi_avalon_external work.clarvi_sim -t ns -voptargs="+acc=npr" -GINIT_FILE=../example-c/build/mem.txt 
-# Start time: 00:01:50 on Nov 17,2019
+# Start time: 13:23:44 on Nov 19,2019
 # Loading sv_std.std
 # Loading work.clarvi_sim
 # Loading work.dual_port_bram
@@ -87,486 +91,1214 @@ do clarvi_test.do ../example-c/build/mem.txt
 # Loading ./clarvi_avalon_external.so
 run 1us
 # Display emulator setup...
-# Failed to connect to display emulator
-quit
-quit -sim
-# End time: 00:02:18 on Nov 17,2019, Elapsed time: 0:00:28
-# Errors: 0, Warnings: 0
-./displayemul
+# Successful connection to display emulator
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+run 1000us
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 0x000001
+# Display emulator write avalon[0x4000080] byteenable f <- 0x1
+# Read of Avalon[0x4000100] returned 0x000001
+# Display emulator write avalon[0x4000080] byteenable f <- 0x1
+# Read of Avalon[0x4000100] returned 0x000001
+# Display emulator write avalon[0x4000080] byteenable f <- 0x1
+# Read of Avalon[0x4000100] returned 0x000001
+# Display emulator write avalon[0x4000080] byteenable f <- 0x1
+# Read of Avalon[0x4000100] returned 0x000001
+# Display emulator write avalon[0x4000080] byteenable f <- 0x1
+# Read of Avalon[0x4000100] returned 0x000002
+# Display emulator write avalon[0x4000080] byteenable f <- 0x2
+# Read of Avalon[0x4000100] returned 0x000002
+# Display emulator write avalon[0x4000080] byteenable f <- 0x2
+# Read of Avalon[0x4000100] returned 0x000002
+# Display emulator write avalon[0x4000080] byteenable f <- 0x2
+# Read of Avalon[0x4000100] returned 0x000003
+# Display emulator write avalon[0x4000080] byteenable f <- 0x3
+# Read of Avalon[0x4000100] returned 0x000003
+# Display emulator write avalon[0x4000080] byteenable f <- 0x3
+# Read of Avalon[0x4000100] returned 0x000003
+# Display emulator write avalon[0x4000080] byteenable f <- 0x3
+# Read of Avalon[0x4000100] returned 0x000003
+# Display emulator write avalon[0x4000080] byteenable f <- 0x3
+# Read of Avalon[0x4000100] returned 0x000003
+# Display emulator write avalon[0x4000080] byteenable f <- 0x3
+# Read of Avalon[0x4000100] returned 0x000002
+# Display emulator write avalon[0x4000080] byteenable f <- 0x2
+# Read of Avalon[0x4000100] returned 0x000002
+# Display emulator write avalon[0x4000080] byteenable f <- 0x2
+# Read of Avalon[0x4000100] returned 0x000002
+# Display emulator write avalon[0x4000080] byteenable f <- 0x2
+# Read of Avalon[0x4000100] returned 0x000001
+# Display emulator write avalon[0x4000080] byteenable f <- 0x1
+# Read of Avalon[0x4000100] returned 0x000001
+# Display emulator write avalon[0x4000080] byteenable f <- 0x1
+# Read of Avalon[0x4000100] returned 0x000001
+# Display emulator write avalon[0x4000080] byteenable f <- 0x1
+# Read of Avalon[0x4000100] returned 0x000001
+# Display emulator write avalon[0x4000080] byteenable f <- 0x1
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000fe
+# Display emulator write avalon[0x4000080] byteenable f <- 0xfe
+# Read of Avalon[0x4000100] returned 0x0000fe
+# Display emulator write avalon[0x4000080] byteenable f <- 0xfe
+# Read of Avalon[0x4000100] returned 0x0000fe
+# Display emulator write avalon[0x4000080] byteenable f <- 0xfe
+# Read of Avalon[0x4000100] returned 0x0000fe
+# Display emulator write avalon[0x4000080] byteenable f <- 0xfe
+# Read of Avalon[0x4000100] returned 0x0000fd
+# Display emulator write avalon[0x4000080] byteenable f <- 0xfd
+# Read of Avalon[0x4000100] returned 0x0000fd
+# Display emulator write avalon[0x4000080] byteenable f <- 0xfd
+# Read of Avalon[0x4000100] returned 0x0000fd
+# Display emulator write avalon[0x4000080] byteenable f <- 0xfd
+# Read of Avalon[0x4000100] returned 0x0000fd
+# Display emulator write avalon[0x4000080] byteenable f <- 0xfd
+# Read of Avalon[0x4000100] returned 0x0000fd
+# Display emulator write avalon[0x4000080] byteenable f <- 0xfd
+# Read of Avalon[0x4000100] returned 0x0000fe
+# Display emulator write avalon[0x4000080] byteenable f <- 0xfe
+# Read of Avalon[0x4000100] returned 0x0000fe
+# Display emulator write avalon[0x4000080] byteenable f <- 0xfe
+# Read of Avalon[0x4000100] returned 0x0000fe
+# Display emulator write avalon[0x4000080] byteenable f <- 0xfe
+# Read of Avalon[0x4000100] returned 0x0000fe
+# Display emulator write avalon[0x4000080] byteenable f <- 0xfe
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 0x0000ff
+# Display emulator write avalon[0x4000080] byteenable f <- 0xff
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0
+# Read of Avalon[0x4000100] returned 0x000001
+# Display emulator write avalon[0x4000080] byteenable f <- 0x1
+# Read of Avalon[0x4000100] returned 0x000001
+# Display emulator write avalon[0x4000080] byteenable f <- 0x1
+# Read of Avalon[0x4000100] returned 0x000001
+# Display emulator write avalon[0x4000080] byteenable f <- 0x1
+# Read of Avalon[0x4000100] returned 0x000001
+# Display emulator write avalon[0x4000080] byteenable f <- 0x1
+# Read of Avalon[0x4000100] returned 0x000001
+# Display emulator write avalon[0x4000080] byteenable f <- 0x1
+# Read of Avalon[0x4000100] returned 0x000001
+# Display emulator write avalon[0x4000080] byteenable f <- 0x1
+# Read of Avalon[0x4000100] returned 0x000001
+# Display emulator write avalon[0x4000080] byteenable f <- 0x1
+# Read of Avalon[0x4000100] returned 0x000002
+# Display emulator write avalon[0x4000080] byteenable f <- 0x2
+# Read of Avalon[0x4000100] returned 0x000002
+# Display emulator write avalon[0x4000080] byteenable f <- 0x2
+# Read of Avalon[0x4000100] returned 0x000002
+# Display emulator write avalon[0x4000080] byteenable f <- 0x2
+# Read of Avalon[0x4000100] returned 0x000002
+# Display emulator write avalon[0x4000080] byteenable f <- 0x2
+# Read of Avalon[0x4000100] returned 0x000002
+# Display emulator write avalon[0x4000080] byteenable f <- 0x2
+# Read of Avalon[0x4000100] returned 0x000002
+# Display emulator write avalon[0x4000080] byteenable f <- 0x2
+# Read of Avalon[0x4000100] returned 0x000002
+# Display emulator write avalon[0x4000080] byteenable f <- 0x2
+# Read of Avalon[0x4000100] returned 0x000003
+# Display emulator write avalon[0x4000080] byteenable f <- 0x3
+# Read of Avalon[0x4000100] returned 0x000003
+# Display emulator write avalon[0x4000080] byteenable f <- 0x3
+# Read of Avalon[0x4000100] returned 0x000003
+# Display emulator write avalon[0x4000080] byteenable f <- 0x3
+# Read of Avalon[0x4000100] returned 0x000003
+# Display emulator write avalon[0x4000080] byteenable f <- 0x3
+# Read of Avalon[0x4000100] returned 0x000003
+# Display emulator write avalon[0x4000080] byteenable f <- 0x3
+# Read of Avalon[0x4000100] returned 0x000003
+# Display emulator write avalon[0x4000080] byteenable f <- 0x3
+# Read of Avalon[0x4000100] returned 0x000004
+# Display emulator write avalon[0x4000080] byteenable f <- 0x4
+# Read of Avalon[0x4000100] returned 0x000004
+# Display emulator write avalon[0x4000080] byteenable f <- 0x4
+# Read of Avalon[0x4000100] returned 0x000004
+# Display emulator write avalon[0x4000080] byteenable f <- 0x4
+# Read of Avalon[0x4000100] returned 0x000004
+# Display emulator write avalon[0x4000080] byteenable f <- 0x4
+# Read of Avalon[0x4000100] returned 0x000004
+# Display emulator write avalon[0x4000080] byteenable f <- 0x4
+# Read of Avalon[0x4000100] returned 0x000004
+# Display emulator write avalon[0x4000080] byteenable f <- 0x4
+# Read of Avalon[0x4000100] returned 0x000004
+# Display emulator write avalon[0x4000080] byteenable f <- 0x4
+# Read of Avalon[0x4000100] returned 0x000005
+# Display emulator write avalon[0x4000080] byteenable f <- 0x5
+# Read of Avalon[0x4000100] returned 0x000005
+# Display emulator write avalon[0x4000080] byteenable f <- 0x5
+# Read of Avalon[0x4000100] returned 0x000005
+# Display emulator write avalon[0x4000080] byteenable f <- 0x5
+# Read of Avalon[0x4000100] returned 0x000005
+# Display emulator write avalon[0x4000080] byteenable f <- 0x5
+# Read of Avalon[0x4000100] returned 0x000005
+# Display emulator write avalon[0x4000080] byteenable f <- 0x5
+# Read of Avalon[0x4000100] returned 0x000005
+# Display emulator write avalon[0x4000080] byteenable f <- 0x5
+# Read of Avalon[0x4000100] returned 0x000005
+# Display emulator write avalon[0x4000080] byteenable f <- 0x5
+# Read of Avalon[0x4000100] returned 0x000006
+# Display emulator write avalon[0x4000080] byteenable f <- 0x6
+# Read of Avalon[0x4000100] returned 0x000006
+# Display emulator write avalon[0x4000080] byteenable f <- 0x6
+# Read of Avalon[0x4000100] returned 0x000006
+# Display emulator write avalon[0x4000080] byteenable f <- 0x6
+# Read of Avalon[0x4000100] returned 0x000006
+# Display emulator write avalon[0x4000080] byteenable f <- 0x6
+# Read of Avalon[0x4000100] returned 0x000006
+# Display emulator write avalon[0x4000080] byteenable f <- 0x6
+# Read of Avalon[0x4000100] returned 0x000006
+# Display emulator write avalon[0x4000080] byteenable f <- 0x6
+# Read of Avalon[0x4000100] returned 0x000007
+# Display emulator write avalon[0x4000080] byteenable f <- 0x7
+# Read of Avalon[0x4000100] returned 0x000007
+# Display emulator write avalon[0x4000080] byteenable f <- 0x7
+# Read of Avalon[0x4000100] returned 0x000007
+# Display emulator write avalon[0x4000080] byteenable f <- 0x7
+# Read of Avalon[0x4000100] returned 0x000007
+# Display emulator write avalon[0x4000080] byteenable f <- 0x7
+# Read of Avalon[0x4000100] returned 0x000007
+# Display emulator write avalon[0x4000080] byteenable f <- 0x7
+# Read of Avalon[0x4000100] returned 0x000007
+# Display emulator write avalon[0x4000080] byteenable f <- 0x7
+# Read of Avalon[0x4000100] returned 0x000008
+# Display emulator write avalon[0x4000080] byteenable f <- 0x8
+# Read of Avalon[0x4000100] returned 0x000008
+# Display emulator write avalon[0x4000080] byteenable f <- 0x8
+# Read of Avalon[0x4000100] returned 0x000008
+# Display emulator write avalon[0x4000080] byteenable f <- 0x8
+# Read of Avalon[0x4000100] returned 0x000008
+# Display emulator write avalon[0x4000080] byteenable f <- 0x8
+# Read of Avalon[0x4000100] returned 0x000008
+# Display emulator write avalon[0x4000080] byteenable f <- 0x8
+# Read of Avalon[0x4000100] returned 0x000008
+# Display emulator write avalon[0x4000080] byteenable f <- 0x8
+# Read of Avalon[0x4000100] returned 0x000009
+# Display emulator write avalon[0x4000080] byteenable f <- 0x9
+# Read of Avalon[0x4000100] returned 0x000009
+# Display emulator write avalon[0x4000080] byteenable f <- 0x9
+# Read of Avalon[0x4000100] returned 0x000009
+# Display emulator write avalon[0x4000080] byteenable f <- 0x9
+# Read of Avalon[0x4000100] returned 0x000009
+# Display emulator write avalon[0x4000080] byteenable f <- 0x9
+# Read of Avalon[0x4000100] returned 0x000009
+# Display emulator write avalon[0x4000080] byteenable f <- 0x9
+# Read of Avalon[0x4000100] returned 0x000009
+# Display emulator write avalon[0x4000080] byteenable f <- 0x9
+# Read of Avalon[0x4000100] returned 0x00000a
+# Display emulator write avalon[0x4000080] byteenable f <- 0xa
+# Read of Avalon[0x4000100] returned 0x00000a
+# Display emulator write avalon[0x4000080] byteenable f <- 0xa
+# Read of Avalon[0x4000100] returned 0x00000a
+# Display emulator write avalon[0x4000080] byteenable f <- 0xa
+# Read of Avalon[0x4000100] returned 0x00000a
+# Display emulator write avalon[0x4000080] byteenable f <- 0xa
+# Read of Avalon[0x4000100] returned 0x00000a
+# Display emulator write avalon[0x4000080] byteenable f <- 0xa
+# Read of Avalon[0x4000100] returned 0x00000a
+# Display emulator write avalon[0x4000080] byteenable f <- 0xa
+# Read of Avalon[0x4000100] returned 0x00000b
+# Display emulator write avalon[0x4000080] byteenable f <- 0xb
+# Read of Avalon[0x4000100] returned 0x00000b
+# Display emulator write avalon[0x4000080] byteenable f <- 0xb
+# Read of Avalon[0x4000100] returned 0x00000b
+# Display emulator write avalon[0x4000080] byteenable f <- 0xb
+# Read of Avalon[0x4000100] returned 0x00000b
+# Display emulator write avalon[0x4000080] byteenable f <- 0xb
+# Read of Avalon[0x4000100] returned 0x00000b
+# Display emulator write avalon[0x4000080] byteenable f <- 0xb
+# Read of Avalon[0x4000100] returned 0x00000b
+# Display emulator write avalon[0x4000080] byteenable f <- 0xb
+# Read of Avalon[0x4000100] returned 0x00000c
+# Display emulator write avalon[0x4000080] byteenable f <- 0xc
+# Read of Avalon[0x4000100] returned 0x00000c
+# Display emulator write avalon[0x4000080] byteenable f <- 0xc
+# Read of Avalon[0x4000100] returned 0x00000c
+# Display emulator write avalon[0x4000080] byteenable f <- 0xc
+# Read of Avalon[0x4000100] returned 0x00000c
+# Display emulator write avalon[0x4000080] byteenable f <- 0xc
+# Read of Avalon[0x4000100] returned 0x00000c
+# Display emulator write avalon[0x4000080] byteenable f <- 0xc
+# Read of Avalon[0x4000100] returned 0x00000d
+# Display emulator write avalon[0x4000080] byteenable f <- 0xd
+# Read of Avalon[0x4000100] returned 0x00000d
+# Display emulator write avalon[0x4000080] byteenable f <- 0xd
+# Read of Avalon[0x4000100] returned 0x00000d
+# Display emulator write avalon[0x4000080] byteenable f <- 0xd
+# Read of Avalon[0x4000100] returned 0x00000d
+# Display emulator write avalon[0x4000080] byteenable f <- 0xd
+# Read of Avalon[0x4000100] returned 0x00000d
+# Display emulator write avalon[0x4000080] byteenable f <- 0xd
+# Read of Avalon[0x4000100] returned 0x00000d
+# Display emulator write avalon[0x4000080] byteenable f <- 0xd
+# Read of Avalon[0x4000100] returned 0x00000e
+# Display emulator write avalon[0x4000080] byteenable f <- 0xe
+# Read of Avalon[0x4000100] returned 0x00000e
+# Display emulator write avalon[0x4000080] byteenable f <- 0xe
+# Read of Avalon[0x4000100] returned 0x00000e
+# Display emulator write avalon[0x4000080] byteenable f <- 0xe
+# Read of Avalon[0x4000100] returned 0x00000e
+# Display emulator write avalon[0x4000080] byteenable f <- 0xe
+# Read of Avalon[0x4000100] returned 0x00000f
+# Display emulator write avalon[0x4000080] byteenable f <- 0xf
+# Read of Avalon[0x4000100] returned 0x00000f
+# Display emulator write avalon[0x4000080] byteenable f <- 0xf
+# Read of Avalon[0x4000100] returned 0x00000f
+# Display emulator write avalon[0x4000080] byteenable f <- 0xf
+# Read of Avalon[0x4000100] returned 0x00000f
+# Display emulator write avalon[0x4000080] byteenable f <- 0xf
+# Read of Avalon[0x4000100] returned 0x00000f
+# Display emulator write avalon[0x4000080] byteenable f <- 0xf
+# Read of Avalon[0x4000100] returned 0x000010
+# Display emulator write avalon[0x4000080] byteenable f <- 0x10
+# Read of Avalon[0x4000100] returned 0x000010
+# Display emulator write avalon[0x4000080] byteenable f <- 0x10
+# Read of Avalon[0x4000100] returned 0x000010
+# Display emulator write avalon[0x4000080] byteenable f <- 0x10
+# Read of Avalon[0x4000100] returned 0x000010
+# Display emulator write avalon[0x4000080] byteenable f <- 0x10
+# Read of Avalon[0x4000100] returned 0x000011
+# Display emulator write avalon[0x4000080] byteenable f <- 0x11
+# Read of Avalon[0x4000100] returned 0x000011
+# Display emulator write avalon[0x4000080] byteenable f <- 0x11
+# Read of Avalon[0x4000100] returned 0x000011
+# Display emulator write avalon[0x4000080] byteenable f <- 0x11
+# Read of Avalon[0x4000100] returned 0x000011
+# Display emulator write avalon[0x4000080] byteenable f <- 0x11
+# Read of Avalon[0x4000100] returned 0x000012
+# Display emulator write avalon[0x4000080] byteenable f <- 0x12
+# Read of Avalon[0x4000100] returned 0x000012
+# Display emulator write avalon[0x4000080] byteenable f <- 0x12
+# Read of Avalon[0x4000100] returned 0x000012
+# Display emulator write avalon[0x4000080] byteenable f <- 0x12
+# Read of Avalon[0x4000100] returned 0x000012
+# Display emulator write avalon[0x4000080] byteenable f <- 0x12
+# Read of Avalon[0x4000100] returned 0x000013
+# Display emulator write avalon[0x4000080] byteenable f <- 0x13
+# Read of Avalon[0x4000100] returned 0x000013
+# Display emulator write avalon[0x4000080] byteenable f <- 0x13
+# Read of Avalon[0x4000100] returned 0x000013
+# Display emulator write avalon[0x4000080] byteenable f <- 0x13
+# Read of Avalon[0x4000100] returned 0x000013
+# Display emulator write avalon[0x4000080] byteenable f <- 0x13
+# Read of Avalon[0x4000100] returned 0x000014
+# Display emulator write avalon[0x4000080] byteenable f <- 0x14
+# Read of Avalon[0x4000100] returned 0x000014
+# Display emulator write avalon[0x4000080] byteenable f <- 0x14
+# Read of Avalon[0x4000100] returned 0x000014
+# Display emulator write avalon[0x4000080] byteenable f <- 0x14
+# Read of Avalon[0x4000100] returned 0x000014
+# Display emulator write avalon[0x4000080] byteenable f <- 0x14
+# Read of Avalon[0x4000100] returned 0x000015
+# Display emulator write avalon[0x4000080] byteenable f <- 0x15
+# Read of Avalon[0x4000100] returned 0x000015
+# Display emulator write avalon[0x4000080] byteenable f <- 0x15
+# Read of Avalon[0x4000100] returned 0x000015
+# Display emulator write avalon[0x4000080] byteenable f <- 0x15
+# Read of Avalon[0x4000100] returned 0x000015
+# Display emulator write avalon[0x4000080] byteenable f <- 0x15
+# Read of Avalon[0x4000100] returned 0x000015
+# Display emulator write avalon[0x4000080] byteenable f <- 0x15
+# Read of Avalon[0x4000100] returned 0x000016
+# Display emulator write avalon[0x4000080] byteenable f <- 0x16
+# Read of Avalon[0x4000100] returned 0x000016
+# Display emulator write avalon[0x4000080] byteenable f <- 0x16
+# Read of Avalon[0x4000100] returned 0x000016
+# Display emulator write avalon[0x4000080] byteenable f <- 0x16
+# Read of Avalon[0x4000100] returned 0x000017
+# Display emulator write avalon[0x4000080] byteenable f <- 0x17
+# Read of Avalon[0x4000100] returned 0x000017
+# Display emulator write avalon[0x4000080] byteenable f <- 0x17
+# Read of Avalon[0x4000100] returned 0x000017
+# Display emulator write avalon[0x4000080] byteenable f <- 0x17
+# Read of Avalon[0x4000100] returned 0x000017
+# Display emulator write avalon[0x4000080] byteenable f <- 0x17
+# Read of Avalon[0x4000100] returned 0x000018
+# Display emulator write avalon[0x4000080] byteenable f <- 0x18
+# Read of Avalon[0x4000100] returned 0x000018
+# Display emulator write avalon[0x4000080] byteenable f <- 0x18
+# Read of Avalon[0x4000100] returned 0x000018
+# Display emulator write avalon[0x4000080] byteenable f <- 0x18
+# Read of Avalon[0x4000100] returned 0x000018
+# Display emulator write avalon[0x4000080] byteenable f <- 0x18
+# Read of Avalon[0x4000100] returned 0x000019
+# Display emulator write avalon[0x4000080] byteenable f <- 0x19
+# Read of Avalon[0x4000100] returned 0x000019
+# Display emulator write avalon[0x4000080] byteenable f <- 0x19
+# Read of Avalon[0x4000100] returned 0x000019
+# Display emulator write avalon[0x4000080] byteenable f <- 0x19
+# Read of Avalon[0x4000100] returned 0x000019
+# Display emulator write avalon[0x4000080] byteenable f <- 0x19
+# Read of Avalon[0x4000100] returned 0x00001a
+# Display emulator write avalon[0x4000080] byteenable f <- 0x1a
+# Read of Avalon[0x4000100] returned 0x00001a
+# Display emulator write avalon[0x4000080] byteenable f <- 0x1a
+# Read of Avalon[0x4000100] returned 0x00001a
+# Display emulator write avalon[0x4000080] byteenable f <- 0x1a
+# Read of Avalon[0x4000100] returned 0x00001a
+# Display emulator write avalon[0x4000080] byteenable f <- 0x1a
+# Read of Avalon[0x4000100] returned 0x00001a
+# Display emulator write avalon[0x4000080] byteenable f <- 0x1a
+# Read of Avalon[0x4000100] returned 0x00001b
+# Display emulator write avalon[0x4000080] byteenable f <- 0x1b
+# Read of Avalon[0x4000100] returned 0x00001b
+# Display emulator write avalon[0x4000080] byteenable f <- 0x1b
+# Read of Avalon[0x4000100] returned 0x00001b
+# Display emulator write avalon[0x4000080] byteenable f <- 0x1b
+# Read of Avalon[0x4000100] returned 0x00001c
+# Display emulator write avalon[0x4000080] byteenable f <- 0x1c
+# Read of Avalon[0x4000100] returned 0x00001c
+# Display emulator write avalon[0x4000080] byteenable f <- 0x1c
+# Read of Avalon[0x4000100] returned 0x00001c
+# Display emulator write avalon[0x4000080] byteenable f <- 0x1c
+# Read of Avalon[0x4000100] returned 0x00001c
+# Display emulator write avalon[0x4000080] byteenable f <- 0x1c
+# Read of Avalon[0x4000100] returned 0x00001c
+# Display emulator write avalon[0x4000080] byteenable f <- 0x1c
+# Read of Avalon[0x4000100] returned 0x00001d
+# Display emulator write avalon[0x4000080] byteenable f <- 0x1d
+# Read of Avalon[0x4000100] returned 0x00001d
+# Display emulator write avalon[0x4000080] byteenable f <- 0x1d
+# Read of Avalon[0x4000100] returned 0x00001d
+# Display emulator write avalon[0x4000080] byteenable f <- 0x1d
+# Read of Avalon[0x4000100] returned 0x00001d
+# Display emulator write avalon[0x4000080] byteenable f <- 0x1d
+# Read of Avalon[0x4000100] returned 0x00001e
+# Display emulator write avalon[0x4000080] byteenable f <- 0x1e
+# Read of Avalon[0x4000100] returned 0x00001e
+# Display emulator write avalon[0x4000080] byteenable f <- 0x1e
+# Read of Avalon[0x4000100] returned 0x00001e
+# Display emulator write avalon[0x4000080] byteenable f <- 0x1e
+# Read of Avalon[0x4000100] returned 0x00001f
+# Display emulator write avalon[0x4000080] byteenable f <- 0x1f
+# Read of Avalon[0x4000100] returned 0x00001f
+# Display emulator write avalon[0x4000080] byteenable f <- 0x1f
+# Read of Avalon[0x4000100] returned 0x00001f
+# Display emulator write avalon[0x4000080] byteenable f <- 0x1f
+# Read of Avalon[0x4000100] returned 0x00001f
+# Display emulator write avalon[0x4000080] byteenable f <- 0x1f
+# Read of Avalon[0x4000100] returned 0x00001f
+# Display emulator write avalon[0x4000080] byteenable f <- 0x1f
+# Read of Avalon[0x4000100] returned 0x000020
+# Display emulator write avalon[0x4000080] byteenable f <- 0x20
+# Read of Avalon[0x4000100] returned 0x000020
+# Display emulator write avalon[0x4000080] byteenable f <- 0x20
+# Read of Avalon[0x4000100] returned 0x000020
+# Display emulator write avalon[0x4000080] byteenable f <- 0x20
+# Read of Avalon[0x4000100] returned 0x000021
+# Display emulator write avalon[0x4000080] byteenable f <- 0x21
+# Read of Avalon[0x4000100] returned 0x000021
+# Display emulator write avalon[0x4000080] byteenable f <- 0x21
+# Read of Avalon[0x4000100] returned 0x000021
+# Display emulator write avalon[0x4000080] byteenable f <- 0x21
+# Read of Avalon[0x4000100] returned 0x000021
+# Display emulator write avalon[0x4000080] byteenable f <- 0x21
+# Read of Avalon[0x4000100] returned 0x000021
+# Display emulator write avalon[0x4000080] byteenable f <- 0x21
+# Read of Avalon[0x4000100] returned 0x000022
+# Display emulator write avalon[0x4000080] byteenable f <- 0x22
+# Read of Avalon[0x4000100] returned 0x000022
+# Display emulator write avalon[0x4000080] byteenable f <- 0x22
+# Read of Avalon[0x4000100] returned 0x000022
+# Display emulator write avalon[0x4000080] byteenable f <- 0x22
+# Read of Avalon[0x4000100] returned 0x000022
+# Display emulator write avalon[0x4000080] byteenable f <- 0x22
+# Read of Avalon[0x4000100] returned 0x000023
+# Display emulator write avalon[0x4000080] byteenable f <- 0x23
+# Read of Avalon[0x4000100] returned 0x000023
+# Display emulator write avalon[0x4000080] byteenable f <- 0x23
+# Read of Avalon[0x4000100] returned 0x000023
+# Display emulator write avalon[0x4000080] byteenable f <- 0x23
+# Read of Avalon[0x4000100] returned 0x000023
+# Display emulator write avalon[0x4000080] byteenable f <- 0x23
+# Read of Avalon[0x4000100] returned 0x000024
+# Display emulator write avalon[0x4000080] byteenable f <- 0x24
+# Read of Avalon[0x4000100] returned 0x000024
+# Display emulator write avalon[0x4000080] byteenable f <- 0x24
+# Read of Avalon[0x4000100] returned 0x000024
+# Display emulator write avalon[0x4000080] byteenable f <- 0x24
+# Read of Avalon[0x4000100] returned 0x000025
+# Display emulator write avalon[0x4000080] byteenable f <- 0x25
+# Read of Avalon[0x4000100] returned 0x000025
+# Display emulator write avalon[0x4000080] byteenable f <- 0x25
+# Read of Avalon[0x4000100] returned 0x000025
+# Display emulator write avalon[0x4000080] byteenable f <- 0x25
+# Read of Avalon[0x4000100] returned 0x000025
+# Display emulator write avalon[0x4000080] byteenable f <- 0x25
+# Read of Avalon[0x4000100] returned 0x000025
+# Display emulator write avalon[0x4000080] byteenable f <- 0x25
+# Read of Avalon[0x4000100] returned 0x000026
+# Display emulator write avalon[0x4000080] byteenable f <- 0x26
+# Read of Avalon[0x4000100] returned 0x000026
+# Display emulator write avalon[0x4000080] byteenable f <- 0x26
+# Read of Avalon[0x4000100] returned 0x000026
+# Display emulator write avalon[0x4000080] byteenable f <- 0x26
+# Read of Avalon[0x4000100] returned 0x000027
+# Display emulator write avalon[0x4000080] byteenable f <- 0x27
+# Read of Avalon[0x4000100] returned 0x000027
+# Display emulator write avalon[0x4000080] byteenable f <- 0x27
+# Read of Avalon[0x4000100] returned 0x000027
+# Display emulator write avalon[0x4000080] byteenable f <- 0x27
+# Read of Avalon[0x4000100] returned 0x000027
+# Display emulator write avalon[0x4000080] byteenable f <- 0x27
+# Read of Avalon[0x4000100] returned 0x000027
+# Display emulator write avalon[0x4000080] byteenable f <- 0x27
+# Read of Avalon[0x4000100] returned 0x000028
+# Display emulator write avalon[0x4000080] byteenable f <- 0x28
+# Read of Avalon[0x4000100] returned 0x000028
+# Display emulator write avalon[0x4000080] byteenable f <- 0x28
+# Read of Avalon[0x4000100] returned 0x000028
+# Display emulator write avalon[0x4000080] byteenable f <- 0x28
+# Read of Avalon[0x4000100] returned 0x000028
+# Display emulator write avalon[0x4000080] byteenable f <- 0x28
+# Read of Avalon[0x4000100] returned 0x000029
+# Display emulator write avalon[0x4000080] byteenable f <- 0x29
+# Read of Avalon[0x4000100] returned 0x000029
+# Display emulator write avalon[0x4000080] byteenable f <- 0x29
+# Read of Avalon[0x4000100] returned 0x000029
+# Display emulator write avalon[0x4000080] byteenable f <- 0x29
+# Read of Avalon[0x4000100] returned 0x000029
+# Display emulator write avalon[0x4000080] byteenable f <- 0x29
+# Read of Avalon[0x4000100] returned 0x00002a
+# Display emulator write avalon[0x4000080] byteenable f <- 0x2a
+# Read of Avalon[0x4000100] returned 0x00002a
+# Display emulator write avalon[0x4000080] byteenable f <- 0x2a
+# Read of Avalon[0x4000100] returned 0x00002a
+# Display emulator write avalon[0x4000080] byteenable f <- 0x2a
+# Read of Avalon[0x4000100] returned 0x00002a
+# Display emulator write avalon[0x4000080] byteenable f <- 0x2a
+# Read of Avalon[0x4000100] returned 0x00002b
+# Display emulator write avalon[0x4000080] byteenable f <- 0x2b
+# Read of Avalon[0x4000100] returned 0x00002b
+# Display emulator write avalon[0x4000080] byteenable f <- 0x2b
+# Read of Avalon[0x4000100] returned 0x00002b
+# Display emulator write avalon[0x4000080] byteenable f <- 0x2b
+# Read of Avalon[0x4000100] returned 0x00002b
+# Display emulator write avalon[0x4000080] byteenable f <- 0x2b
+# Read of Avalon[0x4000100] returned 0x00002c
+# Display emulator write avalon[0x4000080] byteenable f <- 0x2c
+# Read of Avalon[0x4000100] returned 0x00002c
+# Display emulator write avalon[0x4000080] byteenable f <- 0x2c
+# Read of Avalon[0x4000100] returned 0x00002c
+# Display emulator write avalon[0x4000080] byteenable f <- 0x2c
+# Read of Avalon[0x4000100] returned 0x00002c
+# Display emulator write avalon[0x4000080] byteenable f <- 0x2c
+# Read of Avalon[0x4000100] returned 0x00002d
+# Display emulator write avalon[0x4000080] byteenable f <- 0x2d
+# Read of Avalon[0x4000100] returned 0x00002d
+# Display emulator write avalon[0x4000080] byteenable f <- 0x2d
+# Read of Avalon[0x4000100] returned 0x00002d
+# Display emulator write avalon[0x4000080] byteenable f <- 0x2d
+# Read of Avalon[0x4000100] returned 0x00002e
+# Display emulator write avalon[0x4000080] byteenable f <- 0x2e
+# Read of Avalon[0x4000100] returned 0x00002e
+# Display emulator write avalon[0x4000080] byteenable f <- 0x2e
+# Read of Avalon[0x4000100] returned 0x00002e
+# Display emulator write avalon[0x4000080] byteenable f <- 0x2e
+# Read of Avalon[0x4000100] returned 0x00002e
+# Display emulator write avalon[0x4000080] byteenable f <- 0x2e
+# Read of Avalon[0x4000100] returned 0x00002f
+# Display emulator write avalon[0x4000080] byteenable f <- 0x2f
+# Read of Avalon[0x4000100] returned 0x00002f
+# Display emulator write avalon[0x4000080] byteenable f <- 0x2f
+# Read of Avalon[0x4000100] returned 0x00002f
+# Display emulator write avalon[0x4000080] byteenable f <- 0x2f
+# Read of Avalon[0x4000100] returned 0x000030
+# Display emulator write avalon[0x4000080] byteenable f <- 0x30
+# Read of Avalon[0x4000100] returned 0x000030
+# Display emulator write avalon[0x4000080] byteenable f <- 0x30
+# Read of Avalon[0x4000100] returned 0x000030
+# Display emulator write avalon[0x4000080] byteenable f <- 0x30
+# Read of Avalon[0x4000100] returned 0x000030
+# Display emulator write avalon[0x4000080] byteenable f <- 0x30
+# Read of Avalon[0x4000100] returned 0x000030
+# Display emulator write avalon[0x4000080] byteenable f <- 0x30
+# Read of Avalon[0x4000100] returned 0x000031
+# Display emulator write avalon[0x4000080] byteenable f <- 0x31
+# Read of Avalon[0x4000100] returned 0x000031
+# Display emulator write avalon[0x4000080] byteenable f <- 0x31
+# Read of Avalon[0x4000100] returned 0x000031
+# Display emulator write avalon[0x4000080] byteenable f <- 0x31
+# Read of Avalon[0x4000100] returned 0x000032
+# Display emulator write avalon[0x4000080] byteenable f <- 0x32
+# Read of Avalon[0x4000100] returned 0x000032
+# Display emulator write avalon[0x4000080] byteenable f <- 0x32
+# Read of Avalon[0x4000100] returned 0x000032
+# Display emulator write avalon[0x4000080] byteenable f <- 0x32
+# Read of Avalon[0x4000100] returned 0x000032
+# Display emulator write avalon[0x4000080] byteenable f <- 0x32
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
 # Break key hit
-# Socket thread started
-# Key down 40000052, rotary_left=00, rotary_right=ff, buttons=0000
-# Key up 40000052, rotary_left=00, rotary_right=ff, buttons=0000
-# Key down 4000004f, rotary_left=01, rotary_right=ff, buttons=0000
-# Key down 40000052, rotary_left=01, rotary_right=fe, buttons=0000
-# Key up 4000004f, rotary_left=01, rotary_right=fe, buttons=0000
-# Key down 40000050, rotary_left=00, rotary_right=fe, buttons=0000
-# Key up 40000052, rotary_left=00, rotary_right=fe, buttons=0000
-# Key up 40000050, rotary_left=00, rotary_right=fe, buttons=0000
-# Key down 40000051, rotary_left=00, rotary_right=ff, buttons=0000
-# Key up 40000051, rotary_left=00, rotary_right=ff, buttons=0000
-cd
-# reading modelsim.ini
-ls
-# Desktop
-# Documents
-# Downloads
-# modelsim.ini
-# Music
-# Pictures
-# Public
-# Templates
-# transcript
-# trial
-# Videos
-# vsim.wlf
-# work
-cd Desktop/excersize4/clarvi_displayemul
-# reading modelsim.ini
-ls
-# avalon_addr.h
-# bram.sv
-# clarvi_avalon_external.c
-# clarvi_avalon_external.h
-# clarvi_avalon_external.so
-# clarvi_avalon_external.sv
-# clarvi_avalon.sv
-# clarvi_debug.sv
-# clarvi_hw.tcl
-# clarvi_sim.sv
-# clarvi.sv
-# clarvi_test.do
-# displayemul
-# displayemul.c
-# Makefile
-# modelsim.ini
-# README.md
-# riscv.svh
-# sim.sv
-# transcript
-# vsim.wlf
-# work
-do clarvi_test.do ./displayemul
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
-# vmap work work 
-# Modifying modelsim.ini
-# /opt/altera_lite/16.1/modelsim_ase/linuxaloem
-# -1
-# -m32
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:05:34 on Nov 17,2019
-# vlog -reportprogress 300 clarvi_avalon_external.sv 
-# -- Compiling module clarvi_avalon_external
-# 
-# Top level modules:
-# 	clarvi_avalon_external
-# End time: 00:05:34 on Nov 17,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:05:34 on Nov 17,2019
-# vlog -reportprogress 300 clarvi.sv 
-# -- Compiling package clarvi_sv_unit
-# -- Compiling module clarvi
-# 
-# Top level modules:
-# 	clarvi
-# End time: 00:05:35 on Nov 17,2019, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:05:35 on Nov 17,2019
-# vlog -reportprogress 300 bram.sv 
-# -- Compiling module dual_port_bram
-# 
-# Top level modules:
-# 	dual_port_bram
-# End time: 00:05:35 on Nov 17,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:05:35 on Nov 17,2019
-# vlog -reportprogress 300 clarvi_avalon.sv 
-# -- Compiling module clarvi_avalon
-# 
-# Top level modules:
-# 	clarvi_avalon
-# End time: 00:05:35 on Nov 17,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:05:36 on Nov 17,2019
-# vlog -reportprogress 300 clarvi_sim.sv 
-# -- Compiling module clarvi_sim
-# -- Compiling module mock_waitrequest
-# -- Compiling module mock_interrupt
-# 
-# Top level modules:
-# 	clarvi_sim
-# 	mock_waitrequest
-# 	mock_interrupt
-# End time: 00:05:36 on Nov 17,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vsim -novopt -sv_lib clarvi_avalon_external work.clarvi_sim -t ns -voptargs="+acc=npr" -GINIT_FILE=./displayemul 
-# Start time: 00:05:36 on Nov 17,2019
-# Loading sv_std.std
-# Loading work.clarvi_sim
-# Loading work.dual_port_bram
-# Loading work.clarvi_avalon_external
-# Loading work.clarvi_avalon
-# Loading work.clarvi_sv_unit
-# Loading work.clarvi
-# Loading ./clarvi_avalon_external.so
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Break in Module clarvi at clarvi.sv line 114
 run 1us
-# ** Warning: (vsim-PLI-3410) Illegal character '' in data on line 1 of file "./displayemul".    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character 'L' in data on line 1 of file "./displayemul".    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '' in data on line 1 of file "./displayemul".    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '' in data on line 1 of file "./displayemul".    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '' in data on line 1 of file "./displayemul".    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '' in data on line 1 of file "./displayemul".    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '>' in data on line 1 of file "./displayemul".    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '' in data on line 1 of file "./displayemul".    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '' in data on line 1 of file "./displayemul".    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '' in data on line 1 of file "./displayemul".    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '@' in data on line 1 of file "./displayemul".    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '@' in data on line 1 of file "./displayemul".    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '@' in data on line 1 of file "./displayemul".    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '@' in data on line 1 of file "./displayemul".    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# Display emulator setup...
-# Failed to connect to display emulator
-quit -sim
-# End time: 00:05:54 on Nov 17,2019, Elapsed time: 0:00:18
-# Errors: 0, Warnings: 52
-do clarvi_test.do 
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
-# vmap work work 
-# Modifying modelsim.ini
-# /opt/altera_lite/16.1/modelsim_ase/linuxaloem
-# -1
-# -m32
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:06:39 on Nov 17,2019
-# vlog -reportprogress 300 clarvi_avalon_external.sv 
-# -- Compiling module clarvi_avalon_external
-# 
-# Top level modules:
-# 	clarvi_avalon_external
-# End time: 00:06:39 on Nov 17,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:06:40 on Nov 17,2019
-# vlog -reportprogress 300 clarvi.sv 
-# -- Compiling package clarvi_sv_unit
-# -- Compiling module clarvi
-# 
-# Top level modules:
-# 	clarvi
-# End time: 00:06:40 on Nov 17,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:06:40 on Nov 17,2019
-# vlog -reportprogress 300 bram.sv 
-# -- Compiling module dual_port_bram
-# 
-# Top level modules:
-# 	dual_port_bram
-# End time: 00:06:40 on Nov 17,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:06:40 on Nov 17,2019
-# vlog -reportprogress 300 clarvi_avalon.sv 
-# -- Compiling module clarvi_avalon
-# 
-# Top level modules:
-# 	clarvi_avalon
-# End time: 00:06:41 on Nov 17,2019, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:06:41 on Nov 17,2019
-# vlog -reportprogress 300 clarvi_sim.sv 
-# -- Compiling module clarvi_sim
-# -- Compiling module mock_waitrequest
-# -- Compiling module mock_interrupt
-# 
-# Top level modules:
-# 	clarvi_sim
-# 	mock_waitrequest
-# 	mock_interrupt
-# End time: 00:06:41 on Nov 17,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vsim -novopt -sv_lib clarvi_avalon_external work.clarvi_sim -t ns -voptargs="+acc=npr" 
-# Start time: 00:06:41 on Nov 17,2019
-# Loading sv_std.std
-# Loading work.clarvi_sim
-# Loading work.dual_port_bram
-# Loading work.clarvi_avalon_external
-# Loading work.clarvi_avalon
-# Loading work.clarvi_sv_unit
-# Loading work.clarvi
-# Loading ./clarvi_avalon_external.so
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
 run 1us
-# ** Warning: (vsim-7) Failed to open readmem file "mem.hex" in read mode.
-# No such file or directory. (errno = ENOENT)    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# Display emulator setup...
-# Failed to connect to display emulator
-quit -sim
-# End time: 00:07:02 on Nov 17,2019, Elapsed time: 0:00:21
-# Errors: 0, Warnings: 1
-ls
-# avalon_addr.h
-# bram.sv
-# clarvi_avalon_external.c
-# clarvi_avalon_external.h
-# clarvi_avalon_external.so
-# clarvi_avalon_external.sv
-# clarvi_avalon.sv
-# clarvi_debug.sv
-# clarvi_hw.tcl
-# clarvi_sim.sv
-# clarvi.sv
-# clarvi_test.do
-# displayemul
-# displayemul.c
-# Makefile
-# modelsim.ini
-# README.md
-# riscv.svh
-# sim.sv
-# transcript
-# vsim.wlf
-# work
-make
-# make: 'displayemul' is up to date.
-do clarvi_test.do ../example-c/build/mem.hex
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
-# vmap work work 
-# Modifying modelsim.ini
-# /opt/altera_lite/16.1/modelsim_ase/linuxaloem
-# -1
-# -m32
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:09:10 on Nov 17,2019
-# vlog -reportprogress 300 clarvi_avalon_external.sv 
-# -- Compiling module clarvi_avalon_external
-# 
-# Top level modules:
-# 	clarvi_avalon_external
-# End time: 00:09:10 on Nov 17,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:09:10 on Nov 17,2019
-# vlog -reportprogress 300 clarvi.sv 
-# -- Compiling package clarvi_sv_unit
-# -- Compiling module clarvi
-# 
-# Top level modules:
-# 	clarvi
-# End time: 00:09:10 on Nov 17,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:09:11 on Nov 17,2019
-# vlog -reportprogress 300 bram.sv 
-# -- Compiling module dual_port_bram
-# 
-# Top level modules:
-# 	dual_port_bram
-# End time: 00:09:11 on Nov 17,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:09:11 on Nov 17,2019
-# vlog -reportprogress 300 clarvi_avalon.sv 
-# -- Compiling module clarvi_avalon
-# 
-# Top level modules:
-# 	clarvi_avalon
-# End time: 00:09:11 on Nov 17,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:09:11 on Nov 17,2019
-# vlog -reportprogress 300 clarvi_sim.sv 
-# -- Compiling module clarvi_sim
-# -- Compiling module mock_waitrequest
-# -- Compiling module mock_interrupt
-# 
-# Top level modules:
-# 	clarvi_sim
-# 	mock_waitrequest
-# 	mock_interrupt
-# End time: 00:09:11 on Nov 17,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vsim -novopt -sv_lib clarvi_avalon_external work.clarvi_sim -t ns -voptargs="+acc=npr" -GINIT_FILE=../example-c/build/mem.hex 
-# Start time: 00:09:12 on Nov 17,2019
-# Loading sv_std.std
-# Loading work.clarvi_sim
-# Loading work.dual_port_bram
-# Loading work.clarvi_avalon_external
-# Loading work.clarvi_avalon
-# Loading work.clarvi_sv_unit
-# Loading work.clarvi
-# Loading ./clarvi_avalon_external.so
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
 run 1us
-# ** Warning: (vsim-PLI-3406) Too many digits (19) in data on line 1 of file "../example-c/build/mem.hex". (Max is 8.)    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# Display emulator setup...
-# Failed to connect to display emulator
-ls
-# avalon_addr.h
-# bram.sv
-# clarvi_avalon_external.c
-# clarvi_avalon_external.h
-# clarvi_avalon_external.so
-# clarvi_avalon_external.sv
-# clarvi_avalon.sv
-# clarvi_debug.sv
-# clarvi_hw.tcl
-# clarvi_sim.sv
-# clarvi.sv
-# clarvi_test.do
-# displayemul
-# displayemul.c
-# Makefile
-# modelsim.ini
-# README.md
-# riscv.svh
-# sim.sv
-# transcript
-# vsim.wlf
-# work
-cd ../example-c; make
-# Cannot change directory while a simulation is in progress.
-# Use the "quit -sim" command to unload the design first.
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+# Read of Avalon[0x4000100] returned 0x000033
+# Display emulator write avalon[0x4000080] byteenable f <- 0x33
+run 1us
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000100] returned 0x000035
 quit -sim
-# End time: 00:11:19 on Nov 17,2019, Elapsed time: 0:02:07
-# Errors: 1, Warnings: 1
-cd ../example-c
-# reading /opt/altera_lite/16.1/modelsim_ase/linuxaloem/../modelsim.ini
-make
-# mkdir -p build
-# riscv32-unknown-elf-gcc -c -o build/main1.o src/main1.c -O0 -march=rv32i
-# riscv32-unknown-elf-gcc -o build/program.elf build/init.o build/asm.o build/cycles.o build/main.o build/main1.o -T link.ld -nostdlib
-# Makefile:51: recipe for target 'build/program.elf' failed
-# build/main1.o: In function `myfunction':
-# main1.c:(.text+0x0): multiple definition of `myfunction'
-# build/main.o:main.c:(.text+0x0): first defined here
-# build/main1.o: In function `dp':
-# main1.c:(.text+0x30): multiple definition of `dp'
-# build/main.o:main.c:(.text+0x30): first defined here
-# build/main1.o: In function `convertHex':
-# main1.c:(.text+0x58): multiple definition of `convertHex'
-# build/main.o:main.c:(.text+0x58): first defined here
-# build/main1.o: In function `shiftTwice':
-# main1.c:(.text+0x8c): multiple definition of `shiftTwice'
-# build/main.o:main.c:(.text+0x8c): first defined here
-# build/main1.o: In function `hex_output':
-# main1.c:(.text+0xc0): multiple definition of `hex_output'
-# build/main.o:main.c:(.text+0xc0): first defined here
-# build/main1.o: In function `get_formatted_time':
-# main1.c:(.text+0xf8): multiple definition of `get_formatted_time'
-# build/main.o:main.c:(.text+0xf8): first defined here
-# build/main1.o: In function `main':
-# main1.c:(.text+0x294): multiple definition of `main'
-# build/main.o:main.c:(.text+0x294): first defined here
-# collect2: error: ld returned 1 exit status
-# make: *** [build/program.elf] Error 1
-quit -sim
-do clarvi_test.do ../example-c/build/mem.txt
-# Cannot open macro file: clarvi_test.do
-cd ..
-ls
-# clarvi_displayemul
-# example-c
-cd clarvi_displayemul
-# reading modelsim.ini
+# End time: 13:27:35 on Nov 19,2019, Elapsed time: 0:03:51
+# Errors: 0, Warnings: 0
 do clarvi_test.do ../example-c/build/mem.txt
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
@@ -576,44 +1308,44 @@ do clarvi_test.do ../example-c/build/mem.txt
 # -1
 # -m32
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:12:58 on Nov 17,2019
+# Start time: 13:30:20 on Nov 19,2019
 # vlog -reportprogress 300 clarvi_avalon_external.sv 
 # -- Compiling module clarvi_avalon_external
 # 
 # Top level modules:
 # 	clarvi_avalon_external
-# End time: 00:12:58 on Nov 17,2019, Elapsed time: 0:00:00
+# End time: 13:30:20 on Nov 19,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:12:58 on Nov 17,2019
+# Start time: 13:30:20 on Nov 19,2019
 # vlog -reportprogress 300 clarvi.sv 
 # -- Compiling package clarvi_sv_unit
 # -- Compiling module clarvi
 # 
 # Top level modules:
 # 	clarvi
-# End time: 00:12:58 on Nov 17,2019, Elapsed time: 0:00:00
+# End time: 13:30:20 on Nov 19,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:12:59 on Nov 17,2019
+# Start time: 13:30:21 on Nov 19,2019
 # vlog -reportprogress 300 bram.sv 
 # -- Compiling module dual_port_bram
 # 
 # Top level modules:
 # 	dual_port_bram
-# End time: 00:12:59 on Nov 17,2019, Elapsed time: 0:00:00
+# End time: 13:30:21 on Nov 19,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:12:59 on Nov 17,2019
+# Start time: 13:30:21 on Nov 19,2019
 # vlog -reportprogress 300 clarvi_avalon.sv 
 # -- Compiling module clarvi_avalon
 # 
 # Top level modules:
 # 	clarvi_avalon
-# End time: 00:12:59 on Nov 17,2019, Elapsed time: 0:00:00
+# End time: 13:30:21 on Nov 19,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:12:59 on Nov 17,2019
+# Start time: 13:30:21 on Nov 19,2019
 # vlog -reportprogress 300 clarvi_sim.sv 
 # -- Compiling module clarvi_sim
 # -- Compiling module mock_waitrequest
@@ -623,10 +1355,10 @@ do clarvi_test.do ../example-c/build/mem.txt
 # 	clarvi_sim
 # 	mock_waitrequest
 # 	mock_interrupt
-# End time: 00:12:59 on Nov 17,2019, Elapsed time: 0:00:00
+# End time: 13:30:21 on Nov 19,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vsim -novopt -sv_lib clarvi_avalon_external work.clarvi_sim -t ns -voptargs="+acc=npr" -GINIT_FILE=../example-c/build/mem.txt 
-# Start time: 00:13:00 on Nov 17,2019
+# Start time: 13:30:22 on Nov 19,2019
 # Loading sv_std.std
 # Loading work.clarvi_sim
 # Loading work.dual_port_bram
@@ -637,34 +1369,24 @@ do clarvi_test.do ../example-c/build/mem.txt
 # Loading ./clarvi_avalon_external.so
 run 1us
 # Display emulator setup...
-# Failed to connect to display emulator
-quit -sim
-# End time: 00:22:57 on Nov 17,2019, Elapsed time: 0:09:57
-# Errors: 0, Warnings: 0
-ls
-# avalon_addr.h
-# bram.sv
-# clarvi_avalon_external.c
-# clarvi_avalon_external.h
-# clarvi_avalon_external.so
-# clarvi_avalon_external.sv
-# clarvi_avalon.sv
-# clarvi_debug.sv
-# clarvi_hw.tcl
-# clarvi_sim.sv
-# clarvi.sv
-# clarvi_test.do
-# displayemul
-# displayemul.c
-# Makefile
-# modelsim.ini
-# README.md
-# riscv.svh
-# sim.sv
-# transcript
-# vsim.wlf
-# work
-do clarvi_test.do TRACE
+# Successful connection to display emulator
+# Read of Avalon[0x4000100] returned 0x000035
+# Read of Avalon[0x4000300] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+run 1us
+# Read of Avalon[0x4000100] returned 0x000035
+# Read of Avalon[0x4000300] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+run 1us
+# Read of Avalon[0x4000100] returned 0x000035
+# Read of Avalon[0x4000300] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000100] returned 0x000035
+run 1us
+# Read of Avalon[0x4000300] returned 00000000
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000100] returned 0x000035
+do clarvi_test.do ../example-c/build/mem.txt
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
 # vmap work work 
@@ -673,44 +1395,44 @@ do clarvi_test.do TRACE
 # -1
 # -m32
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:23:45 on Nov 17,2019
+# Start time: 13:34:07 on Nov 19,2019
 # vlog -reportprogress 300 clarvi_avalon_external.sv 
 # -- Compiling module clarvi_avalon_external
 # 
 # Top level modules:
 # 	clarvi_avalon_external
-# End time: 00:23:45 on Nov 17,2019, Elapsed time: 0:00:00
+# End time: 13:34:07 on Nov 19,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:23:46 on Nov 17,2019
+# Start time: 13:34:08 on Nov 19,2019
 # vlog -reportprogress 300 clarvi.sv 
 # -- Compiling package clarvi_sv_unit
 # -- Compiling module clarvi
 # 
 # Top level modules:
 # 	clarvi
-# End time: 00:23:46 on Nov 17,2019, Elapsed time: 0:00:00
+# End time: 13:34:08 on Nov 19,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:23:46 on Nov 17,2019
+# Start time: 13:34:08 on Nov 19,2019
 # vlog -reportprogress 300 bram.sv 
 # -- Compiling module dual_port_bram
 # 
 # Top level modules:
 # 	dual_port_bram
-# End time: 00:23:46 on Nov 17,2019, Elapsed time: 0:00:00
+# End time: 13:34:08 on Nov 19,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:23:46 on Nov 17,2019
+# Start time: 13:34:09 on Nov 19,2019
 # vlog -reportprogress 300 clarvi_avalon.sv 
 # -- Compiling module clarvi_avalon
 # 
 # Top level modules:
 # 	clarvi_avalon
-# End time: 00:23:46 on Nov 17,2019, Elapsed time: 0:00:00
+# End time: 13:34:09 on Nov 19,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:23:47 on Nov 17,2019
+# Start time: 13:34:09 on Nov 19,2019
 # vlog -reportprogress 300 clarvi_sim.sv 
 # -- Compiling module clarvi_sim
 # -- Compiling module mock_waitrequest
@@ -720,10 +1442,12 @@ do clarvi_test.do TRACE
 # 	clarvi_sim
 # 	mock_waitrequest
 # 	mock_interrupt
-# End time: 00:23:47 on Nov 17,2019, Elapsed time: 0:00:00
+# End time: 13:34:09 on Nov 19,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vsim -novopt -sv_lib clarvi_avalon_external work.clarvi_sim -t ns -voptargs="+acc=npr" -GINIT_FILE=TRACE 
-# Start time: 00:23:47 on Nov 17,2019
+# End time: 13:34:10 on Nov 19,2019, Elapsed time: 0:03:48
+# Errors: 0, Warnings: 0
+# vsim -novopt -sv_lib clarvi_avalon_external work.clarvi_sim -t ns -voptargs="+acc=npr" -GINIT_FILE=../example-c/build/mem.txt 
+# Start time: 13:34:10 on Nov 19,2019
 # Loading sv_std.std
 # Loading work.clarvi_sim
 # Loading work.dual_port_bram
@@ -733,15 +1457,681 @@ do clarvi_test.do TRACE
 # Loading work.clarvi
 # Loading ./clarvi_avalon_external.so
 run 1us
-# ** Warning: (vsim-7) Failed to open readmem file "TRACE" in read mode.
-# No such file or directory. (errno = ENOENT)    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
 # Display emulator setup...
-# Failed to connect to display emulator
-quit -sim
-# End time: 00:24:05 on Nov 17,2019, Elapsed time: 0:00:18
-# Errors: 0, Warnings: 1
-do clarvi_test.do ./displayemul TRACE
+# Successful connection to display emulator
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000300] returned 00000000
+run 1us
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+run 1us
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+run 100us
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+run 100us
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+do clarvi_test.do ../example-c/build/mem.txt
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
 # vmap work work 
@@ -750,45 +2140,44 @@ do clarvi_test.do ./displayemul TRACE
 # -1
 # -m32
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:24:29 on Nov 17,2019
+# Start time: 13:36:01 on Nov 19,2019
 # vlog -reportprogress 300 clarvi_avalon_external.sv 
 # -- Compiling module clarvi_avalon_external
 # 
 # Top level modules:
 # 	clarvi_avalon_external
-# End time: 00:24:29 on Nov 17,2019, Elapsed time: 0:00:00
+# End time: 13:36:01 on Nov 19,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:24:29 on Nov 17,2019
-# vlog -reportprogress 300 clarvi.sv "+define+TRACE" 
-# ** Warning: riscv.svh(39): (vlog-13233) Design unit "clarvi_sv_unit" already exists and will be overwritten. Design unit compiled with different set of options.
+# Start time: 13:36:01 on Nov 19,2019
+# vlog -reportprogress 300 clarvi.sv 
 # -- Compiling package clarvi_sv_unit
 # -- Compiling module clarvi
 # 
 # Top level modules:
 # 	clarvi
-# End time: 00:24:29 on Nov 17,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 1
+# End time: 13:36:01 on Nov 19,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:24:30 on Nov 17,2019
+# Start time: 13:36:02 on Nov 19,2019
 # vlog -reportprogress 300 bram.sv 
 # -- Compiling module dual_port_bram
 # 
 # Top level modules:
 # 	dual_port_bram
-# End time: 00:24:30 on Nov 17,2019, Elapsed time: 0:00:00
+# End time: 13:36:02 on Nov 19,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:24:30 on Nov 17,2019
+# Start time: 13:36:02 on Nov 19,2019
 # vlog -reportprogress 300 clarvi_avalon.sv 
 # -- Compiling module clarvi_avalon
 # 
 # Top level modules:
 # 	clarvi_avalon
-# End time: 00:24:30 on Nov 17,2019, Elapsed time: 0:00:00
+# End time: 13:36:02 on Nov 19,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:24:31 on Nov 17,2019
+# Start time: 13:36:02 on Nov 19,2019
 # vlog -reportprogress 300 clarvi_sim.sv 
 # -- Compiling module clarvi_sim
 # -- Compiling module mock_waitrequest
@@ -798,10 +2187,12 @@ do clarvi_test.do ./displayemul TRACE
 # 	clarvi_sim
 # 	mock_waitrequest
 # 	mock_interrupt
-# End time: 00:24:31 on Nov 17,2019, Elapsed time: 0:00:00
+# End time: 13:36:02 on Nov 19,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vsim -novopt -sv_lib clarvi_avalon_external work.clarvi_sim -t ns -voptargs="+acc=npr" -GINIT_FILE=./displayemul 
-# Start time: 00:24:31 on Nov 17,2019
+# End time: 13:36:03 on Nov 19,2019, Elapsed time: 0:01:53
+# Errors: 0, Warnings: 0
+# vsim -novopt -sv_lib clarvi_avalon_external work.clarvi_sim -t ns -voptargs="+acc=npr" -GINIT_FILE=../example-c/build/mem.txt 
+# Start time: 13:36:03 on Nov 19,2019
 # Loading sv_std.std
 # Loading work.clarvi_sim
 # Loading work.dual_port_bram
@@ -810,285 +2201,211 @@ do clarvi_test.do ./displayemul TRACE
 # Loading work.clarvi_sv_unit
 # Loading work.clarvi
 # Loading ./clarvi_avalon_external.so
-run 1us
-# ** Warning: (vsim-PLI-3410) Illegal character '' in data on line 1 of file "./displayemul".    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character 'L' in data on line 1 of file "./displayemul".    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '' in data on line 1 of file "./displayemul".    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '' in data on line 1 of file "./displayemul".    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '' in data on line 1 of file "./displayemul".    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '' in data on line 1 of file "./displayemul".    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '>' in data on line 1 of file "./displayemul".    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '' in data on line 1 of file "./displayemul".    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '' in data on line 1 of file "./displayemul".    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '' in data on line 1 of file "./displayemul".    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '@' in data on line 1 of file "./displayemul".    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '@' in data on line 1 of file "./displayemul".    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '@' in data on line 1 of file "./displayemul".    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '@' in data on line 1 of file "./displayemul".    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
-# ** Warning: (vsim-PLI-3410) Illegal character '    : bram.sv(55)
-#    Time: 0 ns  Iteration: 0  Instance: /clarvi_sim/mem
+run 100us
 # Display emulator setup...
-# Failed to connect to display emulator
-# 0xxxxxxxxx:   ---
-# 0xxxxxxxxx:   ---
-# 0xxxxxxxxx:   ---
-# 0xxxxxxxxx:   ---
-# 0xxxxxxxxx:   ---
-# 0x00000000:   ---
-# 0x00000000:   ---
-# 0x00000000:   ---
-# 0x00000004:   ---
-# 0x00000004:   ---
-# 0x00000008:   ---
-# 0x00000008:   ---
-# 0x0000000c:   ---
-# 0x0000000c:   ---
-# 0x00000010:   ---
-# 0x00000010:   ---
-# 0x00000014:   ---
-# 0x00000014:   ---
-# 0x00000018:   ---
-# 0x00000018:   ---
-# 0x0000001c:   ---
-# 0x0000001c:   ---
-# 0x00000020:   ---
-# 0x00000020:   ---
-# 0x00000024:   ---
-# 0x00000024:   ---
-# 0x00000028:   ---
-# 0x00000028:   ---
-# 0x0000002c:   ---
-# 0x0000002c:   ---
-# 0x00000030:   ---
-# 0x00000030:   ---
-# 0x00000034:   ---
-# 0x00000034:   ---
-# 0x00000038:   ---
-# 0x00000038:   ---
-# 0x0000003c:   ---
-# 0x0000003c:   ---
-# 0x00000040:   ---
-# 0x00000040:   ---
-# 0x00000044:   ---
-# 0x00000044:   ---
-# 0x00000048:   ---
-# 0x00000048:   ---
-# 0x0000004c:   ---
-# 0x0000004c:   ---
-# 0x00000050:   ---
-# 0x00000050:   ---
-# 0x00000054:   ---
-# 0x00000054:   ---
-# 0x00000058:   ---
-# 0x00000058:   ---
-# 0x0000005c:   ---
-# 0x0000005c:   ---
-# 0x00000060:   ---
-# 0x00000060:   ---
-# 0x00000064:   ---
-# 0x00000064:   ---
-# 0x00000068:   ---
-# 0x00000068:   ---
-# 0x0000006c:   ---
-# 0x0000006c:   ---
-# 0x00000070:   ---
-# 0x00000070:   ---
-# 0x00000074:   ---
-# 0x00000074:   ---
-# 0x00000078:   ---
-# 0x00000078:   ---
-# 0x0000007c:   ---
-# 0x0000007c:   ---
-# 0x00000080:   ---
-# 0x00000080:   ---
-# 0x00000084:   ---
-# 0x00000084:   ---
-# 0x00000088:   ---
-# 0x00000088:   ---
-# 0x0000008c:   ---
-# 0x0000008c:   ---
-# 0x00000090:   ---
-# 0x00000090:   ---
-# 0x00000094:   ---
-# 0x00000094:   ---
-# 0x00000098:   ---
-# 0x00000098:   ---
-# 0x0000009c:   ---
-# 0x0000009c:   ---
-# 0x000000a0:   ---
-# 0x000000a0:   ---
-# 0x000000a4:   ---
-# 0x000000a4:   ---
-# 0x000000a8:   ---
-# 0x000000a8:   ---
-# 0x000000ac:   ---
-# 0x000000ac:   ---
-# 0x000000b0:   ---
-# 0x000000b0:   ---
-# 0x000000b4:   ---
-# 0x000000b4:   ---
-# 0x000000b8:   ---
-# 0x000000b8:   ---
-# 0x000000bc:   ---
+# Successful connection to display emulator
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 00000000
+# Read of Avalon[0x4000100] returned 0x000035
+# Display emulator write avalon[0x4000080] byteenable f <- 0x35
+# Read of Avalon[0x4000300] returned 0x000002
+# time: 60230, '{op:ECALL, rd:zero, rs1:zero, rs2:zero, rs1_used:0, rs2_used:0, immediate_used:0, immediate:x, funct12:F12_ECALL, memory_write:0, memory_read:0, memory_read_unsigned:0, memory_width:B, enable_wb:0, pc:24} instruction at 00000018, stopping simulator
+# ** Note: $stop    : clarvi_debug.sv(44)
+#    Time: 60230 ns  Iteration: 1  Instance: /clarvi_sim/clarvi/clarvi
+# Break in Module clarvi at clarvi_debug.sv line 44
 quit -sim
-# End time: 00:32:41 on Nov 17,2019, Elapsed time: 0:08:10
-# Errors: 0, Warnings: 52
-ls
-# avalon_addr.h
-# bram.sv
-# clarvi_avalon_external.c
-# clarvi_avalon_external.h
-# clarvi_avalon_external.so
-# clarvi_avalon_external.sv
-# clarvi_avalon.sv
-# clarvi_debug.sv
-# clarvi_hw.tcl
-# clarvi_sim.sv
-# clarvi.sv
-# clarvi_test.do
-# displayemul
-# displayemul.c
-# Makefile
-# modelsim.ini
-# README.md
-# riscv.svh
-# sim.sv
-# transcript
-# vsim.wlf
-# work
-vlog clarvi_sim.sv
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:32:58 on Nov 17,2019
-# vlog -reportprogress 300 clarvi_sim.sv 
-# -- Compiling module clarvi_sim
-# -- Compiling module mock_waitrequest
-# -- Compiling module mock_interrupt
-# 
-# Top level modules:
-# 	clarvi_sim
-# 	mock_waitrequest
-# 	mock_interrupt
-# End time: 00:32:58 on Nov 17,2019, Elapsed time: 0:00:00
+# End time: 13:37:20 on Nov 19,2019, Elapsed time: 0:01:17
 # Errors: 0, Warnings: 0
-run 1us
-# No Design Loaded!
-ls
-# avalon_addr.h
-# bram.sv
-# clarvi_avalon_external.c
-# clarvi_avalon_external.h
-# clarvi_avalon_external.so
-# clarvi_avalon_external.sv
-# clarvi_avalon.sv
-# clarvi_debug.sv
-# clarvi_hw.tcl
-# clarvi_sim.sv
-# clarvi.sv
-# clarvi_test.do
-# displayemul
-# displayemul.c
-# Makefile
-# modelsim.ini
-# README.md
-# riscv.svh
-# sim.sv
-# transcript
-# vsim.wlf
-# work
-./displayemul
 # Break key hit
-# Socket thread started
-# Key down 400000e0, rotary_left=00, rotary_right=00, buttons=0000
-# Key down 63, rotary_left=00, rotary_right=00, buttons=0010
-# Key up 400000e0, rotary_left=00, rotary_right=00, buttons=0010
-# Key up 63, rotary_left=00, rotary_right=00, buttons=0000
-# Key down 400000e2, rotary_left=00, rotary_right=00, buttons=0000
-# Key up 400000e2, rotary_left=00, rotary_right=00, buttons=0000
