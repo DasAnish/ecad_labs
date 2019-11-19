@@ -42,22 +42,98 @@ void hex_output(int value)
   *hex_leds = value;                   // write the value to that address
 }
 
+/*
+Whenever there is a roll over we can note that as 
+high -> low || low -> high
+*/
 
-
-int main(void)
-{
-  int true = 1, false = 0;
-  int buttons;
-  buttons = avolon_read(PIO_BUTTONS);
-  while(true) {
-    buttons += avolon_read(PIO_BUTTONS);
-    if ((buttons>>1) & 1) break;
-    int left;
-    left = avolon_read(PIO_ROTARY_L);
-    
-    if (buttons&1) break;
-    hex_output(left);
-     
+int valChange(int prev, int new) {
+  if (prev == 0 && new == 255) { //Going down
+    return -1;    
+  } else if (prev == 255 && new == 0) {
+    return 1;
+  }else {
+    return 0;
   }
-        
+}
+
+
+void clear_screen() {
+
+  volatile short *framebuffer = (volatile short *) (FRAMEBUFFER_BASE);
+  
+  for (int x=0; x < DISPLAY_WIDTH; x++) {
+    for (int y=0; y < DISPLAY_HEIGHT; y++) {
+      framebuffer[x + y * DISPLAY_WIDTH] = PIXEL_BLACK;
+    }
+  }
+}
+
+int main(void) {
+
+  int true = 1, false = 0;
+  int curPosX = 0;// DISPLAY_WIDTH >> 1;
+  int curPosY = 0;//DISPLAY_HEIGHT >> 1;
+
+  int prevLeft = 0;
+  int prevRight = 0;
+
+  int left, right;
+  int buttons;
+
+  while(true) {
+
+    left = avolon_read(PIO_ROTARY_L);
+    right = avolon_read(PIO_ROTARY_R);
+
+    int leftChange = valChange(prevLeft, left);
+    int rightChange = valChange(prevRight, right);
+
+    if (leftChange == 1) { // left gone up
+      curPosX += 256;
+    } else if (leftChange == -1) {
+      curPosX -= 256;
+    }
+
+    if (rightChange == 1) {
+      curPosY += 255;
+    } else if (rightChange == -1) {
+	curPosY -= 0;
+    }
+
+    prevLeft = left;
+    prevRight = right;
+
+    //curPosX += leftChange;
+    //curPosY += rightChange;
+
+    
+
+    if (curPosX >= DISPLAY_WIDTH) {
+      curPosX = DISPLAY_WIDTH -1;
+    } else if (curPosX < 0) {
+      curPosX = 0;
+    }
+
+    if (curPosY >= DISPLAY_HEIGHT) {
+      curPosY = DISPLAY_HEIGHT - 1;
+    } else if (curPosY < 0) {
+      curPosY = 0;
+    }
+
+    //hex_output(curPosX * 16*16*16 + curPosY);
+
+    vid_set_pixel(curPosX+left, curPosY+right, PIXEL_WHITE);
+
+
+    buttons = avolon_read(PIO_BUTTONS);
+
+    if ((buttons >> 1) & 1 || (buttons >> 2) & 1) {
+      clear_screen();
+      curPosX = DISPLAY_WIDTH >> 1;
+      curPosY = DISPLAY_HEIGHT >> 1;
+    }
+    
+  }
+
 }
