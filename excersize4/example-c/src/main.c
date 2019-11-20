@@ -36,10 +36,13 @@ void vid_set_pixel(int x, int y, int colour)
   framebuffer[x+y*DISPLAY_WIDTH] = colour;
 }
 
-void hex_output(int value)
-{
-  int *hex_leds = (int *) 0x04000080;  // define a pointer to the register
-  *hex_leds = value;                   // write the value to that address
+void hex_output(int value) {
+  avolon_write(PIO_HEX_BASE, value);
+
+}
+
+void led_output(int value) {
+  avolon_write(PIO_LED_BASE, value);
 }
 
 /*
@@ -48,12 +51,12 @@ high -> low || low -> high
 */
 
 int valChange(int prev, int new) {
-  if (prev == 0 && new == 255) { //Going down
-    return -1;    
-  } else if (prev == 255 && new == 0) {
-    return 1;
+  if (prev < new && new - prev > 100 ) { //Going down overflow
+    return new - prev - 256;    
+  } else if (prev > new && prev - new > 100) { //going up overflow
+    return new - prev + 256;
   }else {
-    return 0;
+    return new - prev;
   }
 }
 
@@ -89,23 +92,11 @@ int main(void) {
     int leftChange = valChange(prevLeft, left);
     int rightChange = valChange(prevRight, right);
 
-    if (leftChange == 1) { // left gone up
-      curPosX += 256;
-    } else if (leftChange == -1) {
-      curPosX -= 256;
-    }
-
-    if (rightChange == 1) {
-      curPosY += 255;
-    } else if (rightChange == -1) {
-	curPosY -= 0;
-    }
-
     prevLeft = left;
     prevRight = right;
 
-    //curPosX += leftChange;
-    //curPosY += rightChange;
+    curPosX += leftChange;
+    curPosY += rightChange;
 
     
 
@@ -121,9 +112,11 @@ int main(void) {
       curPosY = 0;
     }
 
-    //hex_output(curPosX * 16*16*16 + curPosY);
+    hex_output(curPosX);
+    led_output(curPosY);
+    
 
-    vid_set_pixel(curPosX+left, curPosY+right, PIXEL_WHITE);
+    vid_set_pixel(curPosX, curPosY, PIXEL_WHITE);
 
 
     buttons = avolon_read(PIO_BUTTONS);
