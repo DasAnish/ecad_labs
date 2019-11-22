@@ -263,9 +263,9 @@ module clarvi_fpga(
         .buttons_external_export                 (buttons),                 //            buttons_external.export
         .clk_clk                                 (CLOCK_50),                                 //                         clk.clk
         .reset_reset_n                           (KEY[0]),                           //                       reset.reset_n
-//		  .hex_digits_external_export              (<connected-to-hex_digits_external_export>),              //         hex_digits_external.export
-        .leds_external_connection_export         (leds),         //    leds_external_connection.export
-        .right_dial_external_export              (DIALR)               //         right_dial_external.export
+		  .hex_digits_external_export              (leds),              //         hex_digits_external.export
+//        .leds_external_connection_export         (leds),         //    leds_external_connection.export
+        .right_dial_external_export              (DIALR),               //         right_dial_external.export
 		  .left_dial_external_export               (DIALL),               //          left_dial_external.export
         .pixelstream_0_conduit_end_0_lcd_red     (LCD_R),     // pixelstream_0_conduit_end_0.lcd_red
         .pixelstream_0_conduit_end_0_lcd_green   (LCD_G),   //                            .lcd_green
@@ -277,7 +277,7 @@ module clarvi_fpga(
 //        .pixelstream_0_conduit_end_0_lcd_dclk_en (<connected-to-pixelstream_0_conduit_end_0_lcd_dclk_en>), //                            .lcd_dclk_en
     );
 
-	 dosync TwentyFourToSevenSeg(.clock(CLOCK_50), .reset(KEY[0]), .hexval(leds), 
+	 TwentyFourToSevenSeg(.clock(CLOCK_50), .reset(!KEY[0]), .hexval(leds), 
 	 .digit0(HEX0), .digit1(HEX1), .digit2(HEX2), .digit3(HEX3), .digit4(HEX4), .digit5(HEX5));
 
 

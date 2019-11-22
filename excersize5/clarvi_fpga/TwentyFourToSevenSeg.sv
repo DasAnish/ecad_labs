@@ -10,7 +10,6 @@ module TwentyFourToSevenSeg(
   output [6:0] digit5
 );
 
-   dosync
    EightBitsToSevenSeg(.clock(clock),
 			 .reset(reset),
 			 .hexval(hexval[7:0]),

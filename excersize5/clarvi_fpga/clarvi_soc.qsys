@@ -57,7 +57,7 @@
          type = "int";
       }
    }
-   element TwentyFourToSevenSeg_0
+   element clarvi_0
    {
       datum _sortIndex
       {
@@ -65,12 +65,12 @@
          type = "int";
       }
    }
-   element clarvi_0
+   element clarvi_soc
    {
-      datum _sortIndex
+      datum _originalDeviceFamily
       {
-         value = "11";
-         type = "int";
+         value = "Cyclone V";
+         type = "String";
       }
    }
    element clarvi_soc
@@ -148,18 +148,11 @@
    type="conduit"
    dir="end" />
  <interface name="clk" internal="clk_50.clk_in" type="clock" dir="end" />
- <interface name="digit_0" internal="TwentyFourToSevenSeg_0.digit_0" />
- <interface name="digit_1" internal="TwentyFourToSevenSeg_0.digit_1" />
- <interface name="digit_2" internal="TwentyFourToSevenSeg_0.digit_2" />
- <interface name="digit_3" internal="TwentyFourToSevenSeg_0.digit_3" />
- <interface name="digit_4" internal="TwentyFourToSevenSeg_0.digit_4" />
- <interface name="digit_5" internal="TwentyFourToSevenSeg_0.digit_5" />
  <interface
    name="hex_digits_external"
    internal="Hex_Digits.external_connection"
    type="conduit"
    dir="end" />
- <interface name="input_hexval" internal="TwentyFourToSevenSeg_0.InputHexval" />
  <interface
    name="leds_external_connection"
    internal="LEDs.external_connection"
@@ -252,11 +245,6 @@
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="8" />
  </module>
- <module
-   name="TwentyFourToSevenSeg_0"
-   kind="TwentyFourToSevenSeg"
-   version="1.0"
-   enabled="0" />
  <module name="clarvi_0" kind="clarvi" version="1.0" enabled="1">
   <parameter name="AUTO_INTERRUPT_RECEIVER_0_INTERRUPTS_USED" value="0" />
   <parameter name="DATA_ADDR_WIDTH" value="29" />
@@ -276,7 +264,7 @@
    version="16.1"
    enabled="1">
   <parameter name="allowInSystemMemoryContentEditor" value="false" />
-  <parameter name="autoInitializationFileName">$${FILENAME}_onchip_memory2_0</parameter>
+  <parameter name="autoInitializationFileName">clarvi_soc_onchip_memory2_0</parameter>
   <parameter name="blockType" value="AUTO" />
   <parameter name="copyInitFile" value="false" />
   <parameter name="dataWidth" value="32" />
@@ -511,7 +499,7 @@
    version="16.1"
    enabled="1">
   <parameter name="allowInSystemMemoryContentEditor" value="false" />
-  <parameter name="autoInitializationFileName">$${FILENAME}_video_memory</parameter>
+  <parameter name="autoInitializationFileName">clarvi_soc_video_memory</parameter>
   <parameter name="blockType" value="AUTO" />
   <parameter name="copyInitFile" value="false" />
   <parameter name="dataWidth" value="32" />
@@ -641,11 +629,6 @@
    kind="clock"
    version="16.1"
    start="pll.outclk0"
-   end="TwentyFourToSevenSeg_0.clock_sink" />
- <connection
-   kind="clock"
-   version="16.1"
-   start="pll.outclk0"
    end="PixelStream_0.clockreset" />
  <connection
    kind="clock"
@@ -679,11 +662,6 @@
    version="16.1"
    start="clk_50.clk_reset"
    end="Buttons.reset" />
- <connection
-   kind="reset"
-   version="16.1"
-   start="clk_50.clk_reset"
-   end="TwentyFourToSevenSeg_0.reset" />
  <connection
    kind="reset"
    version="16.1"
