@@ -10,10 +10,16 @@ Progress: Adding LEDs [altera_avalon_pio 16.1]
 Progress: Parameterizing module LEDs
 Progress: Adding Left_Dial [altera_avalon_pio 16.1]
 Progress: Parameterizing module Left_Dial
+Progress: Adding Left_Rotary [RotaryCtl 1.0]
+Progress: Parameterizing module Left_Rotary
 Progress: Adding PixelStream_0 [PixelStream 1.0]
 Progress: Parameterizing module PixelStream_0
 Progress: Adding Right_Dial [altera_avalon_pio 16.1]
 Progress: Parameterizing module Right_Dial
+Progress: Adding Right_Rotary [RotaryCtl 1.0]
+Progress: Parameterizing module Right_Rotary
+Progress: Adding ShiftRegCtl_0 [ShiftRegCtl 1.0]
+Progress: Parameterizing module ShiftRegCtl_0
 Progress: Adding clarvi_0 [clarvi 1.0]
 Progress: Parameterizing module clarvi_0
 Progress: Adding clk_50 [clock_source 16.1]
@@ -49,10 +55,16 @@ Progress: Adding LEDs [altera_avalon_pio 16.1]
 Progress: Parameterizing module LEDs
 Progress: Adding Left_Dial [altera_avalon_pio 16.1]
 Progress: Parameterizing module Left_Dial
+Progress: Adding Left_Rotary [RotaryCtl 1.0]
+Progress: Parameterizing module Left_Rotary
 Progress: Adding PixelStream_0 [PixelStream 1.0]
 Progress: Parameterizing module PixelStream_0
 Progress: Adding Right_Dial [altera_avalon_pio 16.1]
 Progress: Parameterizing module Right_Dial
+Progress: Adding Right_Rotary [RotaryCtl 1.0]
+Progress: Parameterizing module Right_Rotary
+Progress: Adding ShiftRegCtl_0 [ShiftRegCtl 1.0]
+Progress: Parameterizing module ShiftRegCtl_0
 Progress: Adding clarvi_0 [clarvi 1.0]
 Progress: Parameterizing module clarvi_0
 Progress: Adding clk_50 [clock_source 16.1]
@@ -80,30 +92,32 @@ Info: Interconnect is inserted between master clarvi_0.instr and slave onchip_me
 Warning: clarvi_0.interrupt_receiver_0: Cannot connect clock for irq_mapper.sender
 Warning: clarvi_0.interrupt_receiver_0: Cannot connect reset for irq_mapper.sender
 Info: Buttons: Starting RTL generation for module 'clarvi_soc_Buttons'
-Info: Buttons:   Generation command is [exec /opt/altera_lite/16.1/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.1/quartus/linux64/perl/lib -I /opt/altera_lite/16.1/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.1/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.1/quartus/sopc_builder/bin -I /opt/altera_lite/16.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=clarvi_soc_Buttons --dir=/tmp/alt8222_2135448554205986737.dir/0060_Buttons_gen/ --quartus_dir=/opt/altera_lite/16.1/quartus --verilog --config=/tmp/alt8222_2135448554205986737.dir/0060_Buttons_gen//clarvi_soc_Buttons_component_configuration.pl  --do_build_sim=0  ]
+Info: Buttons:   Generation command is [exec /opt/altera_lite/16.1/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.1/quartus/linux64/perl/lib -I /opt/altera_lite/16.1/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.1/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.1/quartus/sopc_builder/bin -I /opt/altera_lite/16.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=clarvi_soc_Buttons --dir=/tmp/alt8222_2077264675551284744.dir/0032_Buttons_gen/ --quartus_dir=/opt/altera_lite/16.1/quartus --verilog --config=/tmp/alt8222_2077264675551284744.dir/0032_Buttons_gen//clarvi_soc_Buttons_component_configuration.pl  --do_build_sim=0  ]
 Info: Buttons: Done RTL generation for module 'clarvi_soc_Buttons'
 Info: Buttons: "clarvi_soc" instantiated altera_avalon_pio "Buttons"
 Info: Hex_Digits: Starting RTL generation for module 'clarvi_soc_Hex_Digits'
-Info: Hex_Digits:   Generation command is [exec /opt/altera_lite/16.1/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.1/quartus/linux64/perl/lib -I /opt/altera_lite/16.1/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.1/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.1/quartus/sopc_builder/bin -I /opt/altera_lite/16.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=clarvi_soc_Hex_Digits --dir=/tmp/alt8222_2135448554205986737.dir/0061_Hex_Digits_gen/ --quartus_dir=/opt/altera_lite/16.1/quartus --verilog --config=/tmp/alt8222_2135448554205986737.dir/0061_Hex_Digits_gen//clarvi_soc_Hex_Digits_component_configuration.pl  --do_build_sim=0  ]
+Info: Hex_Digits:   Generation command is [exec /opt/altera_lite/16.1/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.1/quartus/linux64/perl/lib -I /opt/altera_lite/16.1/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.1/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.1/quartus/sopc_builder/bin -I /opt/altera_lite/16.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=clarvi_soc_Hex_Digits --dir=/tmp/alt8222_2077264675551284744.dir/0033_Hex_Digits_gen/ --quartus_dir=/opt/altera_lite/16.1/quartus --verilog --config=/tmp/alt8222_2077264675551284744.dir/0033_Hex_Digits_gen//clarvi_soc_Hex_Digits_component_configuration.pl  --do_build_sim=0  ]
 Info: Hex_Digits: Done RTL generation for module 'clarvi_soc_Hex_Digits'
 Info: Hex_Digits: "clarvi_soc" instantiated altera_avalon_pio "Hex_Digits"
 Info: LEDs: Starting RTL generation for module 'clarvi_soc_LEDs'
-Info: LEDs:   Generation command is [exec /opt/altera_lite/16.1/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.1/quartus/linux64/perl/lib -I /opt/altera_lite/16.1/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.1/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.1/quartus/sopc_builder/bin -I /opt/altera_lite/16.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=clarvi_soc_LEDs --dir=/tmp/alt8222_2135448554205986737.dir/0062_LEDs_gen/ --quartus_dir=/opt/altera_lite/16.1/quartus --verilog --config=/tmp/alt8222_2135448554205986737.dir/0062_LEDs_gen//clarvi_soc_LEDs_component_configuration.pl  --do_build_sim=0  ]
+Info: LEDs:   Generation command is [exec /opt/altera_lite/16.1/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.1/quartus/linux64/perl/lib -I /opt/altera_lite/16.1/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.1/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.1/quartus/sopc_builder/bin -I /opt/altera_lite/16.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=clarvi_soc_LEDs --dir=/tmp/alt8222_2077264675551284744.dir/0034_LEDs_gen/ --quartus_dir=/opt/altera_lite/16.1/quartus --verilog --config=/tmp/alt8222_2077264675551284744.dir/0034_LEDs_gen//clarvi_soc_LEDs_component_configuration.pl  --do_build_sim=0  ]
 Info: LEDs: Done RTL generation for module 'clarvi_soc_LEDs'
 Info: LEDs: "clarvi_soc" instantiated altera_avalon_pio "LEDs"
 Info: Left_Dial: Starting RTL generation for module 'clarvi_soc_Left_Dial'
-Info: Left_Dial:   Generation command is [exec /opt/altera_lite/16.1/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.1/quartus/linux64/perl/lib -I /opt/altera_lite/16.1/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.1/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.1/quartus/sopc_builder/bin -I /opt/altera_lite/16.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=clarvi_soc_Left_Dial --dir=/tmp/alt8222_2135448554205986737.dir/0063_Left_Dial_gen/ --quartus_dir=/opt/altera_lite/16.1/quartus --verilog --config=/tmp/alt8222_2135448554205986737.dir/0063_Left_Dial_gen//clarvi_soc_Left_Dial_component_configuration.pl  --do_build_sim=0  ]
+Info: Left_Dial:   Generation command is [exec /opt/altera_lite/16.1/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.1/quartus/linux64/perl/lib -I /opt/altera_lite/16.1/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.1/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.1/quartus/sopc_builder/bin -I /opt/altera_lite/16.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=clarvi_soc_Left_Dial --dir=/tmp/alt8222_2077264675551284744.dir/0035_Left_Dial_gen/ --quartus_dir=/opt/altera_lite/16.1/quartus --verilog --config=/tmp/alt8222_2077264675551284744.dir/0035_Left_Dial_gen//clarvi_soc_Left_Dial_component_configuration.pl  --do_build_sim=0  ]
 Info: Left_Dial: Done RTL generation for module 'clarvi_soc_Left_Dial'
 Info: Left_Dial: "clarvi_soc" instantiated altera_avalon_pio "Left_Dial"
+Info: Left_Rotary: "clarvi_soc" instantiated RotaryCtl "Left_Rotary"
 Info: PixelStream_0: "clarvi_soc" instantiated PixelStream "PixelStream_0"
+Info: ShiftRegCtl_0: "clarvi_soc" instantiated ShiftRegCtl "ShiftRegCtl_0"
 Info: clarvi_0: "clarvi_soc" instantiated clarvi "clarvi_0"
 Info: onchip_memory2_0: Starting RTL generation for module 'clarvi_soc_onchip_memory2_0'
-Info: onchip_memory2_0:   Generation command is [exec /opt/altera_lite/16.1/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.1/quartus/linux64/perl/lib -I /opt/altera_lite/16.1/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.1/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.1/quartus/sopc_builder/bin -I /opt/altera_lite/16.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- /opt/altera_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=clarvi_soc_onchip_memory2_0 --dir=/tmp/alt8222_2135448554205986737.dir/0066_onchip_memory2_0_gen/ --quartus_dir=/opt/altera_lite/16.1/quartus --verilog --config=/tmp/alt8222_2135448554205986737.dir/0066_onchip_memory2_0_gen//clarvi_soc_onchip_memory2_0_component_configuration.pl  --do_build_sim=0  ]
+Info: onchip_memory2_0:   Generation command is [exec /opt/altera_lite/16.1/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.1/quartus/linux64/perl/lib -I /opt/altera_lite/16.1/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.1/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.1/quartus/sopc_builder/bin -I /opt/altera_lite/16.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- /opt/altera_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=clarvi_soc_onchip_memory2_0 --dir=/tmp/alt8222_2077264675551284744.dir/0040_onchip_memory2_0_gen/ --quartus_dir=/opt/altera_lite/16.1/quartus --verilog --config=/tmp/alt8222_2077264675551284744.dir/0040_onchip_memory2_0_gen//clarvi_soc_onchip_memory2_0_component_configuration.pl  --do_build_sim=0  ]
 Info: onchip_memory2_0: Done RTL generation for module 'clarvi_soc_onchip_memory2_0'
 Info: onchip_memory2_0: "clarvi_soc" instantiated altera_avalon_onchip_memory2 "onchip_memory2_0"
 Info: pll: "clarvi_soc" instantiated altera_pll "pll"
 Info: video_memory: Starting RTL generation for module 'clarvi_soc_video_memory'
-Info: video_memory:   Generation command is [exec /opt/altera_lite/16.1/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.1/quartus/linux64/perl/lib -I /opt/altera_lite/16.1/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.1/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.1/quartus/sopc_builder/bin -I /opt/altera_lite/16.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- /opt/altera_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=clarvi_soc_video_memory --dir=/tmp/alt8222_2135448554205986737.dir/0068_video_memory_gen/ --quartus_dir=/opt/altera_lite/16.1/quartus --verilog --config=/tmp/alt8222_2135448554205986737.dir/0068_video_memory_gen//clarvi_soc_video_memory_component_configuration.pl  --do_build_sim=0  ]
+Info: video_memory:   Generation command is [exec /opt/altera_lite/16.1/quartus/linux64/perl/bin/perl -I /opt/altera_lite/16.1/quartus/linux64/perl/lib -I /opt/altera_lite/16.1/quartus/sopc_builder/bin/europa -I /opt/altera_lite/16.1/quartus/sopc_builder/bin/perl_lib -I /opt/altera_lite/16.1/quartus/sopc_builder/bin -I /opt/altera_lite/16.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- /opt/altera_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=clarvi_soc_video_memory --dir=/tmp/alt8222_2077264675551284744.dir/0042_video_memory_gen/ --quartus_dir=/opt/altera_lite/16.1/quartus --verilog --config=/tmp/alt8222_2077264675551284744.dir/0042_video_memory_gen//clarvi_soc_video_memory_component_configuration.pl  --do_build_sim=0  ]
 Info: video_memory: Done RTL generation for module 'clarvi_soc_video_memory'
 Info: video_memory: "clarvi_soc" instantiated altera_avalon_onchip_memory2 "video_memory"
 Info: mm_interconnect_0: "clarvi_soc" instantiated altera_mm_interconnect "mm_interconnect_0"
@@ -141,6 +155,6 @@ Info: rsp_mux_001: "mm_interconnect_1" instantiated altera_merlin_multiplexer "r
 Info: Reusing file /home/ecad/Desktop/excersize5/clarvi_fpga/clarvi_soc/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: avalon_st_adapter: "mm_interconnect_1" instantiated altera_avalon_st_adapter "avalon_st_adapter"
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
-Info: clarvi_soc: Done "clarvi_soc" with 33 modules, 49 files
+Info: clarvi_soc: Done "clarvi_soc" with 35 modules, 52 files
 Info: qsys-generate succeeded.
 Info: Finished: Create HDL design files for synthesis

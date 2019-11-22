@@ -1,10 +1,8 @@
 
 module clarvi_soc (
-	buttons_external_export,
 	clk_clk,
 	hex_digits_external_export,
 	leds_external_connection_export,
-	left_dial_external_export,
 	pixelstream_0_conduit_end_0_lcd_red,
 	pixelstream_0_conduit_end_0_lcd_green,
 	pixelstream_0_conduit_end_0_lcd_blue,
@@ -14,13 +12,19 @@ module clarvi_soc (
 	pixelstream_0_conduit_end_0_lcd_dclk,
 	pixelstream_0_conduit_end_0_lcd_dclk_en,
 	reset_reset_n,
-	right_dial_external_export);	
+	right_rotary_in_rotary_in,
+	right_rotary_event_rotary_cw,
+	right_rotary_event_rotary_ccw,
+	left_rotary_in_rotary_in,
+	left_rotary_event_rotary_cw,
+	left_rotary_event_rotary_ccw,
+	shiftregctl_shiftreg_clk,
+	shiftregctl_shiftreg_loadn,
+	shiftregctl_shiftreg_out);	
 
-	input	[23:0]	buttons_external_export;
 	input		clk_clk;
 	output	[23:0]	hex_digits_external_export;
 	output	[9:0]	leds_external_connection_export;
-	input	[7:0]	left_dial_external_export;
 	output	[7:0]	pixelstream_0_conduit_end_0_lcd_red;
 	output	[7:0]	pixelstream_0_conduit_end_0_lcd_green;
 	output	[7:0]	pixelstream_0_conduit_end_0_lcd_blue;
@@ -30,5 +34,13 @@ module clarvi_soc (
 	output		pixelstream_0_conduit_end_0_lcd_dclk;
 	output		pixelstream_0_conduit_end_0_lcd_dclk_en;
 	input		reset_reset_n;
-	input	[7:0]	right_dial_external_export;
+	input	[1:0]	right_rotary_in_rotary_in;
+	output		right_rotary_event_rotary_cw;
+	output		right_rotary_event_rotary_ccw;
+	input	[1:0]	left_rotary_in_rotary_in;
+	output		left_rotary_event_rotary_cw;
+	output		left_rotary_event_rotary_ccw;
+	output		shiftregctl_shiftreg_clk;
+	output		shiftregctl_shiftreg_loadn;
+	input		shiftregctl_shiftreg_out;
 endmodule

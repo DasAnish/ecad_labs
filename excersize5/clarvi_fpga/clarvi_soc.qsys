@@ -13,7 +13,7 @@
    {
       datum _sortIndex
       {
-         value = "9";
+         value = "12";
          type = "int";
       }
    }
@@ -21,7 +21,7 @@
    {
       datum _sortIndex
       {
-         value = "6";
+         value = "7";
          type = "int";
       }
    }
@@ -29,7 +29,7 @@
    {
       datum _sortIndex
       {
-         value = "5";
+         value = "6";
          type = "int";
       }
    }
@@ -37,7 +37,15 @@
    {
       datum _sortIndex
       {
-         value = "7";
+         value = "8";
+         type = "int";
+      }
+   }
+   element Left_Rotary
+   {
+      datum _sortIndex
+      {
+         value = "9";
          type = "int";
       }
    }
@@ -53,7 +61,23 @@
    {
       datum _sortIndex
       {
-         value = "8";
+         value = "10";
+         type = "int";
+      }
+   }
+   element Right_Rotary
+   {
+      datum _sortIndex
+      {
+         value = "11";
+         type = "int";
+      }
+   }
+   element ShiftRegCtl_0
+   {
+      datum _sortIndex
+      {
+         value = "13";
          type = "int";
       }
    }
@@ -61,7 +85,7 @@
    {
       datum _sortIndex
       {
-         value = "10";
+         value = "4";
          type = "int";
       }
    }
@@ -93,7 +117,7 @@
    {
       datum _sortIndex
       {
-         value = "4";
+         value = "5";
          type = "int";
       }
    }
@@ -142,11 +166,6 @@
  <parameter name="timeStamp" value="0" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
- <interface
-   name="buttons_external"
-   internal="Buttons.external_connection"
-   type="conduit"
-   dir="end" />
  <interface name="clk" internal="clk_50.clk_in" type="clock" dir="end" />
  <interface
    name="hex_digits_external"
@@ -159,8 +178,13 @@
    type="conduit"
    dir="end" />
  <interface
-   name="left_dial_external"
-   internal="Left_Dial.external_connection"
+   name="left_rotary_event"
+   internal="Left_Rotary.rotary_event"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="left_rotary_in"
+   internal="Left_Rotary.rotary_in"
    type="conduit"
    dir="end" />
  <interface
@@ -170,8 +194,18 @@
    dir="end" />
  <interface name="reset" internal="clk_50.clk_in_reset" type="reset" dir="end" />
  <interface
-   name="right_dial_external"
-   internal="Right_Dial.external_connection"
+   name="right_rotary_event"
+   internal="Right_Rotary.rotary_event"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="right_rotary_in"
+   internal="Right_Rotary.rotary_in"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="shiftregctl"
+   internal="ShiftRegCtl_0.shiftreg_ext"
    type="conduit"
    dir="end" />
  <module name="Buttons" kind="altera_avalon_pio" version="16.1" enabled="1">
@@ -186,7 +220,7 @@
   <parameter name="resetValue" value="0" />
   <parameter name="simDoTestBenchWiring" value="false" />
   <parameter name="simDrivenValue" value="0" />
-  <parameter name="width" value="24" />
+  <parameter name="width" value="16" />
  </module>
  <module name="Hex_Digits" kind="altera_avalon_pio" version="16.1" enabled="1">
   <parameter name="bitClearingEdgeCapReg" value="false" />
@@ -230,6 +264,7 @@
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="8" />
  </module>
+ <module name="Left_Rotary" kind="RotaryCtl" version="1.0" enabled="1" />
  <module name="PixelStream_0" kind="PixelStream" version="1.0" enabled="1" />
  <module name="Right_Dial" kind="altera_avalon_pio" version="16.1" enabled="1">
   <parameter name="bitClearingEdgeCapReg" value="false" />
@@ -245,6 +280,8 @@
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="8" />
  </module>
+ <module name="Right_Rotary" kind="RotaryCtl" version="1.0" enabled="1" />
+ <module name="ShiftRegCtl_0" kind="ShiftRegCtl" version="1.0" enabled="1" />
  <module name="clarvi_0" kind="clarvi" version="1.0" enabled="1">
   <parameter name="AUTO_INTERRUPT_RECEIVER_0_INTERRUPTS_USED" value="0" />
   <parameter name="DATA_ADDR_WIDTH" value="29" />
@@ -264,7 +301,7 @@
    version="16.1"
    enabled="1">
   <parameter name="allowInSystemMemoryContentEditor" value="false" />
-  <parameter name="autoInitializationFileName">clarvi_soc_onchip_memory2_0</parameter>
+  <parameter name="autoInitializationFileName">$${FILENAME}_onchip_memory2_0</parameter>
   <parameter name="blockType" value="AUTO" />
   <parameter name="copyInitFile" value="false" />
   <parameter name="dataWidth" value="32" />
@@ -499,7 +536,7 @@
    version="16.1"
    enabled="1">
   <parameter name="allowInSystemMemoryContentEditor" value="false" />
-  <parameter name="autoInitializationFileName">clarvi_soc_video_memory</parameter>
+  <parameter name="autoInitializationFileName">$${FILENAME}_video_memory</parameter>
   <parameter name="blockType" value="AUTO" />
   <parameter name="copyInitFile" value="false" />
   <parameter name="dataWidth" value="32" />
@@ -629,12 +666,60 @@
    kind="clock"
    version="16.1"
    start="pll.outclk0"
+   end="Left_Rotary.clock" />
+ <connection
+   kind="clock"
+   version="16.1"
+   start="pll.outclk0"
+   end="Right_Rotary.clock" />
+ <connection
+   kind="clock"
+   version="16.1"
+   start="pll.outclk0"
+   end="ShiftRegCtl_0.clock_sink" />
+ <connection
+   kind="clock"
+   version="16.1"
+   start="pll.outclk0"
    end="PixelStream_0.clockreset" />
  <connection
    kind="clock"
    version="16.1"
    start="pll.outclk1"
    end="PixelStream_0.video" />
+ <connection
+   kind="conduit"
+   version="16.1"
+   start="ShiftRegCtl_0.buttons"
+   end="Buttons.external_connection">
+  <parameter name="endPort" value="" />
+  <parameter name="endPortLSB" value="0" />
+  <parameter name="startPort" value="" />
+  <parameter name="startPortLSB" value="0" />
+  <parameter name="width" value="0" />
+ </connection>
+ <connection
+   kind="conduit"
+   version="16.1"
+   start="Right_Dial.external_connection"
+   end="Right_Rotary.rotary_pos">
+  <parameter name="endPort" value="" />
+  <parameter name="endPortLSB" value="0" />
+  <parameter name="startPort" value="" />
+  <parameter name="startPortLSB" value="0" />
+  <parameter name="width" value="0" />
+ </connection>
+ <connection
+   kind="conduit"
+   version="16.1"
+   start="Left_Rotary.rotary_pos"
+   end="Left_Dial.external_connection">
+  <parameter name="endPort" value="" />
+  <parameter name="endPortLSB" value="0" />
+  <parameter name="startPort" value="" />
+  <parameter name="startPortLSB" value="0" />
+  <parameter name="width" value="0" />
+ </connection>
  <connection
    kind="reset"
    version="16.1"
@@ -667,6 +752,21 @@
    version="16.1"
    start="clk_50.clk_reset"
    end="clarvi_0.reset" />
+ <connection
+   kind="reset"
+   version="16.1"
+   start="clk_50.clk_reset"
+   end="ShiftRegCtl_0.reset" />
+ <connection
+   kind="reset"
+   version="16.1"
+   start="clk_50.clk_reset"
+   end="Left_Rotary.reset" />
+ <connection
+   kind="reset"
+   version="16.1"
+   start="clk_50.clk_reset"
+   end="Right_Rotary.reset" />
  <connection
    kind="reset"
    version="16.1"

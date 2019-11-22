@@ -238,35 +238,12 @@ module clarvi_fpga(
 		LCD_ON = 1'b1;
 	end
 
-//   clarvi_soc qsys0 (
-//        .clk_clk                                   (CLOCK_50),
-//        .reset_reset_n                             (KEY[0]),
-//        .pio_led_export                            (LEDR),
-//        .buttonsctl_0_shiftreg_in_shiftreg_in     (SHIFT_OUT),
-//        .buttonsctl_0_shiftreg_out_shiftreg_loadn (SHIFT_LOAD),
-//        .buttonsctl_0_shiftreg_out_shiftreg_clk   (SHIFT_CLKIN),
-//        .rotaryctl_left_rotary_in_rotary_in       (DIALL),
-//        .rotaryctl_right_rotary_in_rotary_in      (DIALR),
-//        .pixelstream_0_conduit_end_0_lcd_red   (LCD_R),   // pixelstream_0_conduit_end_0.lcd_red
-//        .pixelstream_0_conduit_end_0_lcd_green (LCD_G), //                            .lcd_green
-//        .pixelstream_0_conduit_end_0_lcd_blue  (LCD_B),  //                            .lcd_blue
-//        .pixelstream_0_conduit_end_0_lcd_hsync (LCD_HSYNC), //                            .lcd_hsync
-//        .pixelstream_0_conduit_end_0_lcd_vsync (LCD_VSYNC), //                            .lcd_vsync
-//        .pixelstream_0_conduit_end_0_lcd_de    (LCD_DEN),    //                            .lcd_de
-//        .pixelstream_0_conduit_end_0_lcd_dclk    (LCD_DCLK),    //                            .lcd_dclk
-////        .pixelstream_0_conduit_end_0_lcd_dclk_en (<connected-to-pixelstream_0_conduit_end_0_lcd_dclk_en>), //                            .lcd_dclk_en
-//    );
-
-	logic [23:0] leds;
-
+	
     clarvi_soc u0 (
-        .buttons_external_export                 (buttons),                 //            buttons_external.export
         .clk_clk                                 (CLOCK_50),                                 //                         clk.clk
         .reset_reset_n                           (KEY[0]),                           //                       reset.reset_n
-		  .hex_digits_external_export              (leds),              //         hex_digits_external.export
-//        .leds_external_connection_export         (leds),         //    leds_external_connection.export
-        .right_dial_external_export              (DIALR),               //         right_dial_external.export
-		  .left_dial_external_export               (DIALL),               //          left_dial_external.export
+//        .hex_digits_external_export              (<connected-to-hex_digits_external_export>),              //         hex_digits_external.export
+//        .leds_external_connection_export         (<connected-to-leds_external_connection_export>),         //    leds_external_connection.export
         .pixelstream_0_conduit_end_0_lcd_red     (LCD_R),     // pixelstream_0_conduit_end_0.lcd_red
         .pixelstream_0_conduit_end_0_lcd_green   (LCD_G),   //                            .lcd_green
         .pixelstream_0_conduit_end_0_lcd_blue    (LCD_B),    //                            .lcd_blue
@@ -275,10 +252,17 @@ module clarvi_fpga(
         .pixelstream_0_conduit_end_0_lcd_de      (LCD_DEN),      //                            .lcd_de
         .pixelstream_0_conduit_end_0_lcd_dclk    (LCD_DCLK),    //                            .lcd_dclk
 //        .pixelstream_0_conduit_end_0_lcd_dclk_en (<connected-to-pixelstream_0_conduit_end_0_lcd_dclk_en>), //                            .lcd_dclk_en
+        .right_rotary_in_rotary_in               (DIALR),               //             right_rotary_in.rotary_in
+//        .right_rotary_event_rotary_cw            (<connected-to-right_rotary_event_rotary_cw>),            //          right_rotary_event.rotary_cw
+//        .right_rotary_event_rotary_ccw           (<connected-to-right_rotary_event_rotary_ccw>),           //                            .rotary_ccw
+        .left_rotary_in_rotary_in                (DIALL),                //              left_rotary_in.rotary_in
+//        .left_rotary_event_rotary_cw             (<connected-to-left_rotary_event_rotary_cw>),             //           left_rotary_event.rotary_cw
+//        .left_rotary_event_rotary_ccw            (<connected-to-left_rotary_event_rotary_ccw,            //                            .rotary_ccw
+        .shiftregctl_shiftreg_clk                (SHIFT_CLKIN),                //                 shiftregctl.shiftreg_clk
+        .shiftregctl_shiftreg_loadn              (SHIFT_LOAD),              //                            .shiftreg_loadn
+        .shiftregctl_shiftreg_out                (SHIFT_OUT)                 //                            .shiftreg_out
     );
-
-	 TwentyFourToSevenSeg(.clock(CLOCK_50), .reset(!KEY[0]), .hexval(leds), 
-	 .digit0(HEX0), .digit1(HEX1), .digit2(HEX2), .digit3(HEX3), .digit4(HEX4), .digit5(HEX5));
+);
 
 
 

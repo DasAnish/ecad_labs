@@ -4,11 +4,12 @@
 
 `timescale 1 ps / 1 ps
 module clarvi_soc (
-		input  wire [23:0] buttons_external_export,                 //            buttons_external.export
 		input  wire        clk_clk,                                 //                         clk.clk
 		output wire [23:0] hex_digits_external_export,              //         hex_digits_external.export
 		output wire [9:0]  leds_external_connection_export,         //    leds_external_connection.export
-		input  wire [7:0]  left_dial_external_export,               //          left_dial_external.export
+		output wire        left_rotary_event_rotary_cw,             //           left_rotary_event.rotary_cw
+		output wire        left_rotary_event_rotary_ccw,            //                            .rotary_ccw
+		input  wire [1:0]  left_rotary_in_rotary_in,                //              left_rotary_in.rotary_in
 		output wire [7:0]  pixelstream_0_conduit_end_0_lcd_red,     // pixelstream_0_conduit_end_0.lcd_red
 		output wire [7:0]  pixelstream_0_conduit_end_0_lcd_green,   //                            .lcd_green
 		output wire [7:0]  pixelstream_0_conduit_end_0_lcd_blue,    //                            .lcd_blue
@@ -18,11 +19,19 @@ module clarvi_soc (
 		output wire        pixelstream_0_conduit_end_0_lcd_dclk,    //                            .lcd_dclk
 		output wire        pixelstream_0_conduit_end_0_lcd_dclk_en, //                            .lcd_dclk_en
 		input  wire        reset_reset_n,                           //                       reset.reset_n
-		input  wire [7:0]  right_dial_external_export               //         right_dial_external.export
+		output wire        right_rotary_event_rotary_cw,            //          right_rotary_event.rotary_cw
+		output wire        right_rotary_event_rotary_ccw,           //                            .rotary_ccw
+		input  wire [1:0]  right_rotary_in_rotary_in,               //             right_rotary_in.rotary_in
+		output wire        shiftregctl_shiftreg_clk,                //                 shiftregctl.shiftreg_clk
+		output wire        shiftregctl_shiftreg_loadn,              //                            .shiftreg_loadn
+		input  wire        shiftregctl_shiftreg_out                 //                            .shiftreg_out
 	);
 
-	wire         pll_outclk0_clk;                                              // pll:outclk_0 -> [Buttons:clk, Hex_Digits:clk, LEDs:clk, Left_Dial:clk, PixelStream_0:csi_clockreset_clk, Right_Dial:clk, clarvi_0:clock, mm_interconnect_0:pll_outclk0_clk, mm_interconnect_1:pll_outclk0_clk, onchip_memory2_0:clk, onchip_memory2_0:clk2, rst_controller:clk, video_memory:clk]
+	wire         pll_outclk0_clk;                                              // pll:outclk_0 -> [Buttons:clk, Hex_Digits:clk, LEDs:clk, Left_Dial:clk, Left_Rotary:clk, PixelStream_0:csi_clockreset_clk, Right_Dial:clk, Right_Rotary:clk, ShiftRegCtl_0:clock_50m, clarvi_0:clock, mm_interconnect_0:pll_outclk0_clk, mm_interconnect_1:pll_outclk0_clk, onchip_memory2_0:clk, onchip_memory2_0:clk2, rst_controller:clk, video_memory:clk]
 	wire         pll_outclk1_clk;                                              // pll:outclk_1 -> PixelStream_0:csi_video_clk
+	wire  [15:0] shiftregctl_0_buttons_export;                                 // ShiftRegCtl_0:buttons -> Buttons:in_port
+	wire   [7:0] right_rotary_rotary_pos_export;                               // Right_Rotary:rotary_pos -> Right_Dial:in_port
+	wire   [7:0] left_rotary_rotary_pos_export;                                // Left_Rotary:rotary_pos -> Left_Dial:in_port
 	wire  [31:0] clarvi_0_instr_readdata;                                      // mm_interconnect_0:clarvi_0_instr_readdata -> clarvi_0:avm_instr_readdata
 	wire         clarvi_0_instr_waitrequest;                                   // mm_interconnect_0:clarvi_0_instr_waitrequest -> clarvi_0:avm_instr_waitrequest
 	wire  [13:0] clarvi_0_instr_address;                                       // clarvi_0:avm_instr_address -> mm_interconnect_0:clarvi_0_instr_address
@@ -87,7 +96,7 @@ module clarvi_soc (
 	wire         mm_interconnect_1_pixelstream_0_slave_parameters_write;       // mm_interconnect_1:PixelStream_0_slave_parameters_write -> PixelStream_0:avs_s0_write
 	wire  [31:0] mm_interconnect_1_pixelstream_0_slave_parameters_writedata;   // mm_interconnect_1:PixelStream_0_slave_parameters_writedata -> PixelStream_0:avs_s0_writedata
 	wire         clarvi_0_interrupt_receiver_0_irq;                            // irq_mapper:sender_irq -> clarvi_0:inr_irq
-	wire         rst_controller_reset_out_reset;                               // rst_controller:reset_out -> [Buttons:reset_n, Hex_Digits:reset_n, LEDs:reset_n, Left_Dial:reset_n, PixelStream_0:csi_clockreset_reset_n, Right_Dial:reset_n, clarvi_0:reset, mm_interconnect_0:clarvi_0_reset_reset_bridge_in_reset_reset, mm_interconnect_1:clarvi_0_reset_reset_bridge_in_reset_reset, onchip_memory2_0:reset, onchip_memory2_0:reset2, rst_translator:in_reset, video_memory:reset]
+	wire         rst_controller_reset_out_reset;                               // rst_controller:reset_out -> [Buttons:reset_n, Hex_Digits:reset_n, LEDs:reset_n, Left_Dial:reset_n, Left_Rotary:rst, PixelStream_0:csi_clockreset_reset_n, Right_Dial:reset_n, Right_Rotary:rst, ShiftRegCtl_0:reset, clarvi_0:reset, mm_interconnect_0:clarvi_0_reset_reset_bridge_in_reset_reset, mm_interconnect_1:clarvi_0_reset_reset_bridge_in_reset_reset, onchip_memory2_0:reset, onchip_memory2_0:reset2, rst_translator:in_reset, video_memory:reset]
 	wire         rst_controller_reset_out_reset_req;                           // rst_controller:reset_req -> [onchip_memory2_0:reset_req, onchip_memory2_0:reset_req2, rst_translator:reset_req_in, video_memory:reset_req]
 
 	clarvi_soc_Buttons buttons (
@@ -95,7 +104,7 @@ module clarvi_soc (
 		.reset_n  (~rst_controller_reset_out_reset),       //               reset.reset_n
 		.address  (mm_interconnect_1_buttons_s1_address),  //                  s1.address
 		.readdata (mm_interconnect_1_buttons_s1_readdata), //                    .readdata
-		.in_port  (buttons_external_export)                // external_connection.export
+		.in_port  (shiftregctl_0_buttons_export)           // external_connection.export
 	);
 
 	clarvi_soc_Hex_Digits hex_digits (
@@ -125,7 +134,16 @@ module clarvi_soc (
 		.reset_n  (~rst_controller_reset_out_reset),         //               reset.reset_n
 		.address  (mm_interconnect_1_left_dial_s1_address),  //                  s1.address
 		.readdata (mm_interconnect_1_left_dial_s1_readdata), //                    .readdata
-		.in_port  (left_dial_external_export)                // external_connection.export
+		.in_port  (left_rotary_rotary_pos_export)            // external_connection.export
+	);
+
+	rotary left_rotary (
+		.clk        (pll_outclk0_clk),                //        clock.clk
+		.rst        (rst_controller_reset_out_reset), //        reset.reset
+		.rot_cw     (left_rotary_event_rotary_cw),    // rotary_event.rotary_cw
+		.rot_ccw    (left_rotary_event_rotary_ccw),   //             .rotary_ccw
+		.rotary_pos (left_rotary_rotary_pos_export),  //   rotary_pos.export
+		.rotary_in  (left_rotary_in_rotary_in)        //    rotary_in.rotary_in
 	);
 
 	mkPixelStream pixelstream_0 (
@@ -160,7 +178,25 @@ module clarvi_soc (
 		.reset_n  (~rst_controller_reset_out_reset),          //               reset.reset_n
 		.address  (mm_interconnect_1_right_dial_s1_address),  //                  s1.address
 		.readdata (mm_interconnect_1_right_dial_s1_readdata), //                    .readdata
-		.in_port  (right_dial_external_export)                // external_connection.export
+		.in_port  (right_rotary_rotary_pos_export)            // external_connection.export
+	);
+
+	rotary right_rotary (
+		.clk        (pll_outclk0_clk),                //        clock.clk
+		.rst        (rst_controller_reset_out_reset), //        reset.reset
+		.rot_cw     (right_rotary_event_rotary_cw),   // rotary_event.rotary_cw
+		.rot_ccw    (right_rotary_event_rotary_ccw),  //             .rotary_ccw
+		.rotary_pos (right_rotary_rotary_pos_export), //   rotary_pos.export
+		.rotary_in  (right_rotary_in_rotary_in)       //    rotary_in.rotary_in
+	);
+
+	shiftregctl shiftregctl_0 (
+		.reset          (rst_controller_reset_out_reset), //        reset.reset
+		.clock_50m      (pll_outclk0_clk),                //   clock_sink.clk
+		.buttons        (shiftregctl_0_buttons_export),   //      buttons.export
+		.shiftreg_clk   (shiftregctl_shiftreg_clk),       // shiftreg_ext.shiftreg_clk
+		.shiftreg_loadn (shiftregctl_shiftreg_loadn),     //             .shiftreg_loadn
+		.shiftreg_out   (shiftregctl_shiftreg_out)        //             .shiftreg_out
 	);
 
 	clarvi_avalon #(
