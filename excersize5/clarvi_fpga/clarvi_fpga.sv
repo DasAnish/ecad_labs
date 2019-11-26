@@ -238,11 +238,11 @@ module clarvi_fpga(
 		LCD_ON = 1'b1;
 	end
 
-	
+	logic [23:0] hex;
     clarvi_soc u0 (
         .clk_clk                                 (CLOCK_50),                                 //                         clk.clk
         .reset_reset_n                           (KEY[0]),                           //                       reset.reset_n
-//        .hex_digits_external_export              (<connected-to-hex_digits_external_export>),              //         hex_digits_external.export
+        .hex_digits_external_export              (hex),              //         hex_digits_external.export
 //        .leds_external_connection_export         (<connected-to-leds_external_connection_export>),         //    leds_external_connection.export
         .pixelstream_0_conduit_end_0_lcd_red     (LCD_R),     // pixelstream_0_conduit_end_0.lcd_red
         .pixelstream_0_conduit_end_0_lcd_green   (LCD_G),   //                            .lcd_green
@@ -262,7 +262,10 @@ module clarvi_fpga(
         .shiftregctl_shiftreg_loadn              (SHIFT_LOAD),              //                            .shiftreg_loadn
         .shiftregctl_shiftreg_out                (SHIFT_OUT)                 //                            .shiftreg_out
     );
-);
+	 
+	 TwentyFourToSevenSeg(.clock(CLOCK_50), .reset(!KEY[0]), .hexval(hex), 
+	 .digit0(HEX0), .digit1(HEX1), .digit2(HEX2), .digit3(HEX3), .digit4(HEX4), .digit5(HEX5));
+
 
 
 
